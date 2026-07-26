@@ -1,0 +1,97 @@
+﻿# ============================================================
+# PROJET : GESTION DE SUPERETTE
+# FICHIER : .gitignore
+# Auteur : Girandoux Fandio
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Configuration sensible
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# Logs
+logs/
+*.log
+
+# Tests et cache
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.mypy_cache/
+.ruff_cache/
+
+# Base de donnees / sauvegardes
+*.db
+*.sqlite
+*.sqlite3
+*.backup
+*.dump
+*.sql.gz
+data/backup/
+
+# Rapports et exports generes
+reports/pdf/*
+reports/excel/*
+reports/csv/*
+reports/images/*
+exports/
+!reports/pdf/.gitkeep
+!reports/excel/.gitkeep
+!reports/csv/.gitkeep
+!reports/images/.gitkeep
+
+# Garder les donnees sources du projet
+!data/csv/*.csv
+!data/excel/*.xlsx
+
+# Power BI temporaire
+powerbi/~$*
+powerbi/*.tmp
+
+# Editeurs / Systeme
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
+~*
+# Runtime / fichiers generes localement
+import_log.txt
+logs/*.log
+# Python cache
+# Environnement local
+# Logs et rapports generes
+!logs/.gitkeep
+
+# Archives locales
+archive/
+# Documents de preparation locaux
+Projektuebersicht_Superette.txt
+Projektuebersicht_Superette_Strukturiert.txt
+structure_projet.txt

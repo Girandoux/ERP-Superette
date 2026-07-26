@@ -1,0 +1,34 @@
+﻿categorie_id ;code_categorie;nom_categorie;description;date_creation
+1;ASS;Assaisonnement;Produits servant à assaisonner les aliments (Maggi, épices, sel, bouillons, etc.).;01.01.2026
+2;BIS;Biscuits;Biscuits sucrés, salés, crackers et produits similaires.;01.01.2026
+3;BEN;Boisson Energisante;Boissons énergisantes telles que XXL, Predator, Red Bull, etc.;01.01.2026
+4;BOG;Boisson Gazeuse;Boissons gazeuses non alcoolisées (Coca-Cola, Fanta, Sprite, Top, etc.).;01.01.2026
+5;BRB;Brasserie Biere;Bières produites par les brasseries locales ou internationales.;01.01.2026
+6;CAN;Canette;Boissons conditionnées en canette (bières, sodas, boissons énergisantes).;01.01.2026
+7;COM;Combustible;Produits destinés à la cuisson ou à l'éclairage (charbon, gaz, pétrole, etc.).;01.01.2026
+8;TOM;Concentré Tomate;Concentrés de tomate en sachet, boîte ou tube.;01.01.2026
+9;CNF;Confiserie;Bonbons, chewing-gums, chocolats et autres friandises.;01.01.2026
+10;CSV;Conserve;Conserves alimentaires en boîte ou en bocal.;01.01.2026
+11;CSG;Consigne;Bouteilles consignées et emballages retournables.;01.01.2026
+12;EAU;Eau;Eaux minérales et eaux de table.;01.01.2026
+13;ELE;Electricite;Produits ou services liés à l'électricité (ampoules, recharge, etc.).;01.01.2026
+14;EMB;Emballage;Sacs, sachets, cartons et autres emballages destinés aux clients.;01.01.2026
+15;ENT;Entretien;Produits d'entretien ménager et de nettoyage.;01.01.2026
+16;EPI;Epicerie;Produits alimentaires divers (huile, sucre, farine, riz, etc.).;01.01.2026
+17;FOU;Fourniture;Fournitures diverses utilisées pour le fonctionnement de la boutique.;01.01.2026
+18;GUI;Guinness Biere;Produits de la marque Guinness.;01.01.2026
+19;HYG;Hygiene;Produits d'hygiène générale.;01.01.2026
+20;HYF;Hygiène Féminine;Serviettes hygiéniques, protège-slips et autres produits d'hygiène féminine.;01.01.2026
+21;INS;Insecticide;Produits contre les moustiques et autres insectes (spirales, sprays, etc.).;01.01.2026
+22;JUS;Jus;Jus de fruits et boissons à base de fruits.;01.01.2026
+23;MOU;Mouchoir;Mouchoirs en papier, serviettes et papiers absorbants.;01.01.2026
+24;MUX;Mux Biere;Produits de la marque Mützig (Mux) ou assimilés.;01.01.2026
+25;PAT;Pates;Pâtes alimentaires, nouilles, spaghetti, macaroni, etc.;01.01.2026
+26;POM;Pommade;Crèmes, pommades et produits de soin corporels.;01.01.2026
+27;TAB;Tabac;Cigarettes, cigares et autres produits du tabac.;01.01.2026
+28;VIN;Vin;Vins rouges, blancs, rosés et vins mousseux.;01.01.2026
+29;DET;Détergent;Lessives, savons, liquides vaisselle et autres détergents.;01.01.2026
+30;PAP;Papeterie;Cahiers, stylos, crayons, feuilles et fournitures scolaires ou de bureau.;01.01.2026
+31;HYC;Hygiène Corporelle;Savons, shampoings, gels douche, dentifrices et produits de soin corporel.;01.01.2026
+32;DIV;Divers;Produits ne pouvant être classés dans aucune autre catégorie.;01.01.2026
+;;;;

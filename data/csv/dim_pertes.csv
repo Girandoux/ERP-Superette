@@ -1,0 +1,9 @@
+﻿perte_id;date_perte;date_id;produit_id;qte_perte;motif_perte;valeur_unitaire;valeur_totale;utilisateur
+1;24.06.2026;24.06.2026;52;2;Périmé; 470,83 FCFA ; 941,67 FCFA ;Archile
+2;24.06.2026;24.06.2026;42;6;Périmé; 450,00 FCFA ; 2.700,00 FCFA ;Archile
+3;24.06.2026;24.06.2026;47;13;Périmé; 90,00 FCFA ; 1.170,00 FCFA ;Archile
+4;24.06.2026;24.06.2026;49;3;Périmé; 180,00 FCFA ; 540,00 FCFA ;Archile
+5;24.06.2026;24.06.2026;96;12;Périmé; 45,00 FCFA ; 540,00 FCFA ;Archile
+6;24.06.2026;24.06.2026;95;5;Perce; 172,50 FCFA ; 862,50 FCFA ;Archile
+7;24.06.2026;24.06.2026;17;1;Vole; 450,00 FCFA ; 450,00 FCFA ;Archile
+8;24.06.2026;24.06.2026;5;1;Vole; 200,00 FCFA ; 200,00 FCFA ;Archile

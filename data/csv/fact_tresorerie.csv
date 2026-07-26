@@ -1,0 +1,4 @@
+﻿mouvement_id;date_mouvement;date_id;type_mouvement; montant ;description;utilisateur
+1;01.06.2026;01.06.2026;Apport; 339.900 FCFA ;Reste mois Mai;Charly
+2;19.06.2026;19.06.2026;Apport; 510.000 FCFA ;Reapprovisionnement initial de la boutique;Girandoux
+3;22.06.2026;22.06.2026;Apport; 700.000 FCFA ;Reapprovisionnement initial de la boutique;Girandoux

@@ -1,0 +1,104 @@
+﻿inventaire_id;date_inventaire;date_id;produit_id;stock_theorique;stock_physique;ecart;valeur_ecart;commentaire;utilisateur
+1;01.07.2026;01.07.2026;1;100;100;0; -   FCFA ;Inventur Juli;Achile/Christian
+2;01.07.2026;01.07.2026;2;229;240;11; 206,25 FCFA ;Inventur Juli;Achile/Christian
+3;01.07.2026;01.07.2026;3;120;108;-12;-480,00 FCFA ;Inventur Juli;Achile/Christian
+4;01.07.2026;01.07.2026;4;91;93;2; 78,33 FCFA ;Inventur Juli;Achile/Christian
+5;01.07.2026;01.07.2026;6;110;110;0; -   FCFA ;Inventur Juli;Achile/Christian
+6;01.07.2026;01.07.2026;5;62;56;-6;-1.999,98 FCFA ;Inventur Juli;Achile/Christian
+7;01.07.2026;01.07.2026;7;44;48;4; 2.400,00 FCFA ;Inventur Juli;Achile/Christian
+8;01.07.2026;01.07.2026;9;-31;16;47; 28.004,17 FCFA ;Inventur Juli;Achile/Christian
+9;01.07.2026;01.07.2026;10;-17;1;18; 10.725,00 FCFA ;Inventur Juli;Achile/Christian
+10;01.07.2026;01.07.2026;11;40;6;-34;-33.716,67 FCFA ;Inventur Juli;Achile/Christian
+11;01.07.2026;01.07.2026;12;10;24;14; 8.400,00 FCFA ;Inventur Juli;Achile/Christian
+12;01.07.2026;01.07.2026;13;18;18;0; -   FCFA ;Inventur Juli;Achile/Christian
+13;01.07.2026;01.07.2026;14;84;45;-39;-21.612,50 FCFA ;Inventur Juli;Achile/Christian
+14;01.07.2026;01.07.2026;15;24;22;-2;-1.383,33 FCFA ;Inventur Juli;Achile/Christian
+15;01.07.2026;01.07.2026;16;12;1;-11;-6.600,00 FCFA ;Inventur Juli;Achile/Christian
+16;01.07.2026;01.07.2026;17;27;22;-5;-3.000,00 FCFA ;Inventur Juli;Achile/Christian
+17;01.07.2026;01.07.2026;18;-21;10;31; 18.600,00 FCFA ;Inventur Juli;Achile/Christian
+18;01.07.2026;01.07.2026;19;24;23;-1;-729,17 FCFA ;Inventur Juli;Achile/Christian
+19;01.07.2026;01.07.2026;20;24;24;0; -   FCFA ;Inventur Juli;Achile/Christian
+20;01.07.2026;01.07.2026;21;24;24;0; -   FCFA ;Inventur Juli;Achile/Christian
+21;01.07.2026;01.07.2026;22;24;24;0; -   FCFA ;Inventur Juli;Achile/Christian
+22;01.07.2026;01.07.2026;23;23;23;0; -   FCFA ;Inventur Juli;Achile/Christian
+23;01.07.2026;01.07.2026;24;23;23;0; -   FCFA ;Inventur Juli;Achile/Christian
+24;01.07.2026;01.07.2026;25;49;48;-1;-50,00 FCFA ;Inventur Juli;Achile/Christian
+25;01.07.2026;01.07.2026;26;48;49;1; 86,00 FCFA ;Inventur Juli;Achile/Christian
+26;01.07.2026;01.07.2026;27;44;44;0; -   FCFA ;Inventur Juli;Achile/Christian
+27;01.07.2026;01.07.2026;28;78;78;0; -   FCFA ;Inventur Juli;Achile/Christian
+28;01.07.2026;01.07.2026;29;47;45;-2;-740,00 FCFA ;Inventur Juli;Achile/Christian
+29;01.07.2026;01.07.2026;31;3;0;-3;-2.700,00 FCFA ;Inventur Juli;Achile/Christian
+30;01.07.2026;01.07.2026;32;24;24;0; -   FCFA ;Inventur Juli;Achile/Christian
+31;01.07.2026;01.07.2026;33;7;18;11; 2.475,00 FCFA ;Inventur Juli;Achile/Christian
+32;01.07.2026;01.07.2026;34;8;7;-1;-1.000,00 FCFA ;Inventur Juli;Achile/Christian
+33;01.07.2026;01.07.2026;35;24;24;0; -   FCFA ;Inventur Juli;Achile/Christian
+34;01.07.2026;01.07.2026;36;81;51;-30;-6.000,00 FCFA ;Inventur Juli;Achile/Christian
+35;01.07.2026;01.07.2026;37;3;3;0; -   FCFA ;Inventur Juli;Achile/Christian
+36;01.07.2026;01.07.2026;38;2;2;0; -   FCFA ;Inventur Juli;Achile/Christian
+37;01.07.2026;01.07.2026;39;4;0;-4;-300,00 FCFA ;Inventur Juli;Achile/Christian
+38;01.07.2026;01.07.2026;40;144;146;2; 70,51 FCFA ;Inventur Juli;Achile/Christian
+39;01.07.2026;01.07.2026;41;124;130;6; 224,00 FCFA ;Inventur Juli;Achile/Christian
+40;01.07.2026;01.07.2026;42;0;0;0; -   FCFA ;Inventur Juli;Achile/Christian
+41;01.07.2026;01.07.2026;43;11;10;-1;-625,00 FCFA ;Inventur Juli;Achile/Christian
+42;01.07.2026;01.07.2026;44;146;145;-1;-56,67 FCFA ;Inventur Juli;Achile/Christian
+43;01.07.2026;01.07.2026;45;284;278;-6;-240,00 FCFA ;Inventur Juli;Achile/Christian
+44;01.07.2026;01.07.2026;46;14;14;0; -   FCFA ;Inventur Juli;Achile/Christian
+45;01.07.2026;01.07.2026;47;0;0;0; -   FCFA ;Inventur Juli;Achile/Christian
+46;01.07.2026;01.07.2026;48;9;8;-1;-90,00 FCFA ;Inventur Juli;Achile/Christian
+47;01.07.2026;01.07.2026;49;0;0;0; -   FCFA ;Inventur Juli;Achile/Christian
+48;01.07.2026;01.07.2026;50;38;32;-6;-270,00 FCFA ;Inventur Juli;Achile/Christian
+49;01.07.2026;01.07.2026;51;37;31;-6;-5.950,00 FCFA ;Inventur Juli;Achile/Christian
+50;01.07.2026;01.07.2026;52;115;108;-7;-3.295,83 FCFA ;Inventur Juli;Achile/Christian
+51;01.07.2026;01.07.2026;53;91;97;6; 3.600,00 FCFA ;Inventur Juli;Achile/Christian
+52;01.07.2026;01.07.2026;54;129;107;-22;-13.108,33 FCFA ;Inventur Juli;Achile/Christian
+53;01.07.2026;01.07.2026;56;5;0;-5;-4.333,33 FCFA ;Inventur Juli;Achile/Christian
+54;01.07.2026;01.07.2026;57;60;60;0; -   FCFA ;Inventur Juli;Achile/Christian
+55;01.07.2026;01.07.2026;58;58;58;0; -   FCFA ;Inventur Juli;Achile/Christian
+56;01.07.2026;01.07.2026;59;6;6;0; -   FCFA ;Inventur Juli;Achile/Christian
+57;01.07.2026;01.07.2026;60;6;6;0; -   FCFA ;Inventur Juli;Achile/Christian
+58;01.07.2026;01.07.2026;61;6;6;0; -   FCFA ;Inventur Juli;Achile/Christian
+59;01.07.2026;01.07.2026;62;11;11;0; -   FCFA ;Inventur Juli;Achile/Christian
+60;01.07.2026;01.07.2026;63;10;9;-1;-70,83 FCFA ;Inventur Juli;Achile/Christian
+61;01.07.2026;01.07.2026;64;46;46;0; -   FCFA ;Inventur Juli;Achile/Christian
+62;01.07.2026;01.07.2026;65;2;2;0; -   FCFA ;Inventur Juli;Achile/Christian
+63;01.07.2026;01.07.2026;66;12;12;0; -   FCFA ;Inventur Juli;Achile/Christian
+64;01.07.2026;01.07.2026;67;6;6;0; -   FCFA ;Inventur Juli;Achile/Christian
+65;01.07.2026;01.07.2026;68;6;6;0; -   FCFA ;Inventur Juli;Achile/Christian
+66;01.07.2026;01.07.2026;69;60;60;0; -   FCFA ;Inventur Juli;Achile/Christian
+67;01.07.2026;01.07.2026;70;22;22;0; -   FCFA ;Inventur Juli;Achile/Christian
+68;01.07.2026;01.07.2026;71;40;37;-3;-1.099,98 FCFA ;Inventur Juli;Achile/Christian
+69;01.07.2026;01.07.2026;72;19;27;8; 2.933,28 FCFA ;Inventur Juli;Achile/Christian
+70;01.07.2026;01.07.2026;73;30;22;-8;-2.933,28 FCFA ;Inventur Juli;Achile/Christian
+71;01.07.2026;01.07.2026;74;30;27;-3;-1.860,00 FCFA ;Inventur Juli;Achile/Christian
+72;01.07.2026;01.07.2026;75;33;32;-1;-650,00 FCFA ;Inventur Juli;Achile/Christian
+73;01.07.2026;01.07.2026;76;30;29;-1;-391,66 FCFA ;Inventur Juli;Achile/Christian
+74;01.07.2026;01.07.2026;77;31;30;-1;-550,00 FCFA ;Inventur Juli;Achile/Christian
+75;01.07.2026;01.07.2026;78;12;0;-12;-2.899,92 FCFA ;Inventur Juli;Achile/Christian
+76;01.07.2026;01.07.2026;79;58;34;-24;-9.399,84 FCFA ;Inventur Juli;Achile/Christian
+77;01.07.2026;01.07.2026;80;12;12;0; -   FCFA ;Inventur Juli;Achile/Christian
+78;01.07.2026;01.07.2026;81;8;10;2; 483,32 FCFA ;Inventur Juli;Achile/Christian
+79;01.07.2026;01.07.2026;82;36;35;-1;-391,66 FCFA ;Inventur Juli;Achile/Christian
+80;01.07.2026;01.07.2026;83;33;34;1; 541,66 FCFA ;Inventur Juli;Achile/Christian
+81;01.07.2026;01.07.2026;84;26;22;-4;-2.166,64 FCFA ;Inventur Juli;Achile/Christian
+82;01.07.2026;01.07.2026;85;26;23;-3;-1.174,98 FCFA ;Inventur Juli;Achile/Christian
+83;01.07.2026;01.07.2026;86;5;0;-5;-2.083,33 FCFA ;Inventur Juli;Achile/Christian
+84;01.07.2026;01.07.2026;87;24;46;22; 12.612,42 FCFA ;Inventur Juli;Achile/Christian
+85;01.07.2026;01.07.2026;88;1;0;-1;-66,00 FCFA ;Inventur Juli;Achile/Christian
+86;01.07.2026;01.07.2026;89;8;8;0; -   FCFA ;Inventur Juli;Achile/Christian
+87;01.07.2026;01.07.2026;90;13;2;-11;-4.546,67 FCFA ;Inventur Juli;Achile/Christian
+88;01.07.2026;01.07.2026;91;5;5;0; -   FCFA ;Inventur Juli;Achile/Christian
+89;01.07.2026;01.07.2026;92;19;0;-19;-7.853,33 FCFA ;Inventur Juli;Achile/Christian
+90;01.07.2026;01.07.2026;93;36;0;-36;-14.880,00 FCFA ;Inventur Juli;Achile/Christian
+91;01.07.2026;01.07.2026;94;19;16;-3;-1.020,00 FCFA ;Inventur Juli;Achile/Christian
+92;01.07.2026;01.07.2026;95;35;35;0; -   FCFA ;Inventur Juli;Achile/Christian
+93;01.07.2026;01.07.2026;96;0;0;0; -   FCFA ;Inventur Juli;Achile/Christian
+94;01.07.2026;01.07.2026;97;180;180;0; -   FCFA ;Inventur Juli;Achile/Christian
+95;01.07.2026;01.07.2026;98;195;195;0; -   FCFA ;Inventur Juli;Achile/Christian
+96;01.07.2026;01.07.2026;99;192;187;-5;-100,00 FCFA ;Inventur Juli;Achile/Christian
+97;01.07.2026;01.07.2026;100;12;11;-1;-1.666,67 FCFA ;Inventur Juli;Achile/Christian
+98;01.07.2026;01.07.2026;101;12;12;0; -   FCFA ;Inventur Juli;Achile/Christian
+99;01.07.2026;01.07.2026;102;11;11;0; -   FCFA ;Inventur Juli;Achile/Christian
+100;01.07.2026;01.07.2026;103;12;12;0; -   FCFA ;Inventur Juli;Achile/Christian
+101;01.07.2026;01.07.2026;104;12;12;0; -   FCFA ;Inventur Juli;Achile/Christian
+102;01.07.2026;01.07.2026;105;4;4;0; -   FCFA ;Inventur Juli;Achile/Christian
+103;01.07.2026;01.07.2026;55;-5;3;8; 5.190,40 FCFA ;Inventur Juli;Achile/Christian
