@@ -95,3 +95,7 @@ archive/
 Projektuebersicht_Superette.txt
 Projektuebersicht_Superette_Strukturiert.txt
 structure_projet.txt
+# Streamlit local UI state
+.streamlit/ui_state.json
+streamlit/ui_state.json
+ui_state.json

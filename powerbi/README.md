@@ -7,9 +7,11 @@
 >
 > Dieses Projekt basiert auf einem realen Anwendungsfall einer kleinen Superette in Kamerun.
 >
-> Ich habe die komplette Datenlösung entwickelt, um die täglichen Geschäftsprozesse – wie Einkauf, Verkauf, Lagerverwaltung, Inventur, Betriebsausgaben und Kassenführung – digital abzubilden.
+> Nach der Analyse der Geschäftsprozesse entwickelte ich eine vollständige Datenlösung bestehend aus einer PostgreSQL-Datenbank, einer Streamlit-Anwendung und interaktiven Power BI-Dashboards.
 >
-> Das Power BI Dashboard ergänzt die PostgreSQL-Datenbank und die Streamlit-Anwendung. Es ermöglicht, die gespeicherten Daten übersichtlich auszuwerten und wichtige Kennzahlen für betriebliche Entscheidungen bereitzustellen.
+> Die Power BI-Dashboards greifen auf die zentrale PostgreSQL-Datenbank zu und visualisieren die im täglichen Geschäftsbetrieb erfassten Daten. Sie unterstützen die Auswertung von Einkäufen, Verkäufen, Lagerbeständen, Inventuren, Betriebsausgaben und der Kassenführung sowie die Bereitstellung wichtiger KPIs für fundierte betriebliche Entscheidungen.
+>
+> Ziel war es, aus den operativen Geschäftsdaten aussagekräftige Analysen und Berichte zu erstellen, die den Ladenbesitzer bei der Überwachung und Steuerung seines Unternehmens unterstützen.
 
 ---
 
@@ -69,26 +71,30 @@ Das Dashboard soll dabei helfen, Entwicklungen frühzeitig zu erkennen und die w
 
 # 🏛️ Systemarchitektur
 
-Das Power BI Dashboard ist Teil der gesamten Projektarchitektur.
+Das Power BI Dashboard ist Teil der gesamten ERP-Systemarchitektur und greift auf dieselbe PostgreSQL-Datenbank zu wie die Streamlit-Anwendung.
 
 ```text
-                CSV-Dateien
-                     │
-                     ▼
-          PostgreSQL-Datenbank
-                     │
-                SQL-Views
-                     │
-                     ▼
-                Power BI
-                     │
-                     ▼
-        Dashboards, KPIs und Analysen
+              Streamlit ERP
+          (Produktivbetrieb)
+                   │
+                   ▼
+        PostgreSQL-Datenbank
+                   │
+        Tabellen • Views • Funktionen
+                   │
+                   ▼
+               SQL-Views
+                   │
+                   ▼
+               Power BI
+                   │
+                   ▼
+      Dashboards, KPIs und Analysen
 ```
 
-Die Daten werden zunächst in PostgreSQL gespeichert.
+Die Streamlit-Anwendung dient der täglichen Erfassung und Verwaltung der Geschäftsdaten. Alle Daten werden direkt in der PostgreSQL-Datenbank gespeichert.
 
-Für die Berichte greift Power BI hauptsächlich auf vorbereitete SQL-Views zu. Dadurch bleibt das Datenmodell übersichtlich und viele Berechnungen können bereits in der Datenbank durchgeführt werden.
+Für Analysen und Berichte greift Power BI hauptsächlich auf vorbereitete SQL-Views zu. Dadurch bleibt das Datenmodell übersichtlich, wiederverwendbar und performant. Berechnungen und Datenaufbereitungen werden bereits in der Datenbank durchgeführt, sodass Power BI sich auf die Visualisierung und Analyse konzentrieren kann.
 
 ---
 

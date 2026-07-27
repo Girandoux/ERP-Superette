@@ -1,10 +1,8 @@
-ERP-Supermarkt – Projektübersicht (Interview)
+ERP-Supermarkt – Projektübersicht
 
 1. Projekt in einem Satz
 
-Ein ERP-System für eine kleine Superette mit Streamlit, PostgreSQL,
-Python, SQL, Power BI und einem ETL-Prozess für den automatischen
-Import von CSV-Dateien.
+Entwicklung einer vollständigen Datenlösung für eine kleine Superette – von der Analyse der Geschäftsprozesse über das relationale Datenmodell und die PostgreSQL-Datenbank bis hin zur ERP-Anwendung mit Streamlit und interaktiven Power BI-Dashboards.
 
 ------------------------------------------------------------------------
 

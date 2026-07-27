@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # PROJET : GESTION DE SUPERETTE
 # FICHIER : config/settings.py
 # AUTEUR : Girandoux Fandio
@@ -70,9 +70,9 @@ CONFIG_DIR = BASE_DIR / "config"
 DATABASE_DIR = BASE_DIR / "database"
 SQL_DIR = BASE_DIR / "sql"
 DATA_DIR = BASE_DIR / "data"
-CSV_DIR = DATA_DIR / "csv"
-EXCEL_DIR = DATA_DIR / "excel"
-PAGES_DIR = BASE_DIR / "pages"
+CSV_DIR = DATA_DIR / "raw" / "csv"
+EXCEL_DIR = DATA_DIR / "raw" / "excel"
+PAGES_DIR = BASE_DIR / "streamlit" / "pages"
 UTILS_DIR = BASE_DIR / "utils"
 POWERBI_DIR = BASE_DIR / "powerbi"
 REPORTS_DIR = BASE_DIR / "reports"
@@ -224,3 +224,4 @@ def create_required_dirs():
 def is_development():
     """Indique si l'application tourne en mode developpement."""
     return APP_ENV.strip().lower() == "development"
+

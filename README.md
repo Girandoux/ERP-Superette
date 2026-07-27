@@ -7,8 +7,9 @@
 >
 > Dieses Projekt basiert auf einem realen Anwendungsfall einer kleinen Superette in Kamerun.
 >
-> Ziel war es, eine vollständige Datenlösung mit PostgreSQL, Python, Streamlit und Power BI zu entwickeln, um die täglichen Geschäftsprozesse digital zu verwalten und gleichzeitig aussagekräftige Analysen bereitzustellen.
-
+> Nach einer Analyse der Geschäftsprozesse entwickelte ich eine vollständige Datenlösung bestehend aus einer PostgreSQL-Datenbank, einer ERP-Anwendung mit Python und Streamlit sowie interaktiven Power BI-Dashboards.
+>
+> Ziel war es, die täglichen Geschäftsprozesse – darunter Einkauf, Verkauf, Lagerverwaltung, Inventur, Betriebsausgaben und Kassenführung – zu digitalisieren, zentral zu verwalten und durch aussagekräftige Analysen sowie KPIs fundierte betriebliche Entscheidungen zu unterstützen.
 ---
 
 ## 📖 Projektübersicht
@@ -35,32 +36,52 @@ Alle Daten werden zentral in PostgreSQL gespeichert und anschließend in Streaml
 
 ## 🚀 Projektziele
 
-Bei der Entwicklung standen folgende Ziele im Vordergrund:
+Bei der Entwicklung des ERP-Systems standen folgende Ziele im Vordergrund:
 
-- Digitalisierung der täglichen Geschäftsprozesse
-- Zentrale Verwaltung aller Geschäftsdaten
-- Hohe Datenqualität durch relationale Datenbank
-- Benutzerfreundliche Oberfläche mit Streamlit
-- Interaktive Dashboards mit Power BI
-- Einfache Erweiterbarkeit des Projekts
+- Analyse und Digitalisierung der Geschäftsprozesse einer kleinen Superette
+- Entwicklung eines flexiblen und erweiterbaren ERP-Systems für den täglichen Geschäftsbetrieb
+- Entwurf eines relationalen Datenmodells (ERD) als Grundlage der PostgreSQL-Datenbank
+- Zentrale und konsistente Verwaltung aller Geschäftsdaten in einer gemeinsamen Datenbank
+- Einmalige Migration bestehender Excel- und CSV-Daten in das neue System
+- Entwicklung einer benutzerfreundlichen Streamlit-Anwendung für die tägliche Datenerfassung
+- Bereitstellung aktueller Kennzahlen und Managementberichte mit Power BI
+- Modulare Softwarearchitektur für eine einfache Wartung und kontinuierliche Erweiterung entsprechend den Anforderungen des Ladenbesitzers
 
 ---
 
 ## 🏗️ Projektarchitektur
 
 ```text
-                 CSV-Dateien
+        Anforderungen des Ladenbesitzers
+                      │
+                      ▼
+             Geschäftsprozessanalyse
+                      │
+                      ▼
+          ERD und relationales Datenmodell
+                selbst entwickelt
                       │
                       ▼
              PostgreSQL-Datenbank
+                selbst aufgebaut
                       │
-        ┌─────────────┼─────────────┐
-        ▼                           ▼
-   Python / Streamlit         Power BI
-        │                           │
-        └─────────────┬─────────────┘
+       ┌──────────────┴──────────────┐
+       │                             │
+       ▼                             ▼
+Einmaliger Datenimport        Streamlit-Anwendung
+  aus Excel / CSV             für den täglichen Betrieb
+       │                             │
+       └──────────────┬──────────────┘
                       ▼
-          Verwaltung & Datenanalyse
+             Python-Anwendungslogik
+        database/ + utils/ + SQLAlchemy
+                      │
+          ┌───────────┴───────────┐
+          ▼                       ▼
+       Reports              Power BI
+                                  │
+                                  ▼
+                    Analyse und Management-KPIs
 ```
 
 ---
@@ -83,18 +104,21 @@ Bei der Entwicklung standen folgende Ziele im Vordergrund:
 
 ## ⭐ Projekt-Highlights
 
-✔ Entwicklung einer relationalen PostgreSQL-Datenbank
+✔ Analyse der Geschäftsprozesse und Entwicklung der Systemanforderungen
 
-✔ Erstellung einer modularen Streamlit-Anwendung
+✔ Entwurf des Entity-Relationship-Diagramms (ERD) und des relationalen Datenmodells
 
-✔ Entwicklung interaktiver Power BI Dashboards
+✔ Entwicklung einer vollständigen PostgreSQL-Datenbank mit Tabellen, Beziehungen, Views, Triggern, Funktionen und Indizes
 
-✔ Automatisierung von Geschäftsprozessen mit SQL-Triggern und SQL-Funktionen
+✔ Entwicklung einer modularen ERP-Anwendung mit Python, SQLAlchemy und Streamlit
 
-✔ Verwendung eines Star-Schema-Datenmodells für Analysen
+✔ Implementierung eines ETL-Prozesses zur Migration bestehender Excel- und CSV-Daten
 
-✔ Verbindung von Datenbank, Anwendung und Dashboard in einer gemeinsamen Lösung
+✔ Digitalisierung der täglichen Geschäftsprozesse (Einkauf, Verkauf, Lager, Inventur, Ausgaben und Kassenführung)
 
+✔ Entwicklung interaktiver Power BI-Dashboards für Analysen und Management-KPIs
+
+✔ Kontinuierliche Weiterentwicklung des Systems entsprechend den Anforderungen des Ladenbesitzers
 ---
 ## 📂 Projektstruktur
 
@@ -170,33 +194,43 @@ Einige Ansichten der Anwendung.
 
 ## Streamlit
 
-![Dashboard](images/streamlit_dashboard.png)
+![Dashboard](images/streamlit/streamlit_accueil.png)
 
 ## Power BI
 
-![Power BI Dashboard](images/powerbi_dashboard.png)
+![Power BI Dashboard](images/powerbi/dashboard_overview.png)
 
 > Die verwendeten Bilder dienen als Beispiele. Weitere Screenshots befinden sich im Ordner **images/**.
 
 ---
-
 # 🔄 Datenfluss
 
-Die Anwendung arbeitet mit einer zentralen PostgreSQL-Datenbank.
+Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des ERP-Systems.
+
+Zu Beginn wurden vorhandene Geschäftsdaten einmalig aus Excel- und CSV-Dateien in die Datenbank übernommen. Im täglichen Betrieb werden alle neuen Daten direkt über die Streamlit-Anwendung erfasst und in der Datenbank gespeichert. Power BI greift auf dieselbe Datenbasis zu und erstellt aktuelle Analysen und Berichte.
 
 ```text
-CSV-Dateien
-      │
-      ▼
-PostgreSQL
-      │
-      ├────────► Streamlit
-      │
-      └────────► Power BI
+            Einmaliger Import
+           Excel- / CSV-Dateien
+                    │
+                    ▼
+        PostgreSQL-Datenbank
+                    ▲
+                    │
+      Streamlit-Anwendung (ERP)
+      Produktivbetrieb
+      • Produkte
+      • Einkäufe
+      • Verkäufe
+      • Inventur
+      • Ausgaben
+      • Kassenführung
+                    │
+                    ▼
+      Reports & Power BI Dashboards
 ```
 
-Dadurch greifen alle Anwendungen auf dieselben Daten zu und es entsteht eine einheitliche Datenbasis.
-
+Dadurch arbeiten alle Komponenten mit derselben zentralen Datenbasis. Änderungen, die in der Streamlit-Anwendung vorgenommen werden, stehen unmittelbar für Berichte, Auswertungen und Power BI-Dashboards zur Verfügung.
 ---
 
 # 📚 Dokumentation

@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # PROJET : GESTION DE SUPERETTE
 # PAGE : 01_Accueil.py
 # ROLE : Page d'accueil et vue generale de l'application
@@ -82,17 +82,17 @@ st.markdown(
 )
 c1,c2,c3,c4=st.columns(4)
 with c1:
-    st.page_link("pages/02_Produits.py",label="Produits")
-    st.page_link("pages/03_Categories.py",label="Categories")
+    st.page_link("streamlit/pages/02_Produits.py",label="Produits")
+    st.page_link("streamlit/pages/03_Categories.py",label="Categories")
 with c2:
-    st.page_link("pages/04_Achats.py",label="Achats")
-    st.page_link("pages/06_Ventes.py",label="Ventes")
+    st.page_link("streamlit/pages/04_Achats.py",label="Achats")
+    st.page_link("streamlit/pages/06_Ventes.py",label="Ventes")
 with c3:
-    st.page_link("pages/08_Depenses.py",label="Depenses")
-    st.page_link("pages/10_Tresorerie.py",label="Tresorerie")
+    st.page_link("streamlit/pages/08_Depenses.py",label="Depenses")
+    st.page_link("streamlit/pages/10_Tresorerie.py",label="Tresorerie")
 with c4:
-    st.page_link("pages/12_Rapports.py",label="Rapports")
-    st.page_link("pages/13_Dashboard.py",label="Dashboard")
+    st.page_link("streamlit/pages/12_Rapports.py",label="Rapports")
+    st.page_link("streamlit/pages/13_Dashboard.py",label="Dashboard")
 
 # ============================================================
 # 6. APERCUS OPERATIONNELS
@@ -143,4 +143,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 

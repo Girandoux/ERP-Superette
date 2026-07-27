@@ -7,12 +7,13 @@
 >
 > Dieses Projekt basiert auf einem realen Anwendungsfall einer kleinen Superette in Kamerun.
 >
-> Die PostgreSQL-Datenbank bildet das zentrale Fundament des Projekts und verwaltet sämtliche Geschäftsdaten – von Produkten, Einkäufen und Verkäufen über Lagerbewegungen und Inventuren bis hin zu Betriebsausgaben und der Kassenführung.
+> Nach einer Analyse der Geschäftsprozesse wurde ein relationales Datenmodell (ERD) entwickelt und darauf aufbauend eine PostgreSQL-Datenbank konzipiert und implementiert.
 >
-> Sie dient als gemeinsame Datenquelle für die Streamlit-Anwendung und die Power BI Dashboards und gewährleistet eine konsistente, strukturierte und zuverlässige Speicherung aller Geschäftsdaten.
+> Die Datenbank bildet das zentrale Fundament des ERP-Systems und verwaltet sämtliche Geschäftsdaten – von Produkten, Einkäufen und Verkäufen über Lagerbewegungen und Inventuren bis hin zu Betriebsausgaben und der Kassenführung.
 >
-> Ziel war es, eine leistungsfähige relationale Datenbank zu entwickeln, die sowohl die tägliche Verwaltung der Superette als auch umfangreiche Analysen und Berichte unterstützt.
-
+> Sie stellt eine gemeinsame Datenbasis für die Streamlit-Anwendung und die Power BI-Dashboards bereit und gewährleistet eine konsistente, strukturierte und zuverlässige Speicherung aller Geschäftsdaten.
+>
+> Ziel war es, eine leistungsfähige relationale Datenbank mit Tabellen, Beziehungen, Views, Funktionen, Triggern und Indizes zu entwickeln, die sowohl den täglichen Geschäftsbetrieb als auch umfangreiche Analysen und Berichte unterstützt.
 ---
 
 # 📖 Inhaltsverzeichnis
@@ -79,31 +80,36 @@ Die PostgreSQL-Datenbank bildet damit die Grundlage für alle Module des Projekt
 
 # 🏛️ Systemarchitektur
 
-Die Datenbank ist der zentrale Bestandteil der gesamten Anwendung.
+Die PostgreSQL-Datenbank bildet das zentrale Fundament des ERP-Systems. Sie verwaltet sämtliche Geschäftsdaten und stellt diese der Streamlit-Anwendung sowie Power BI zur Verfügung.
 
 ```text
-                 CSV-Dateien
-                      │
-                      ▼
-          PostgreSQL-Datenbank
-                      │
-        ┌─────────────┼─────────────┐
-        │                           │
-        ▼                           ▼
-   SQL-Views                  SQL-Funktionen
-        │                           │
-        └─────────────┬─────────────┘
-                      ▼
-             Python / Streamlit
-                      │
-                      ▼
-                 Power BI
+      Geschäftsprozessanalyse
+               │
+               ▼
+     ERD & relationales Datenmodell
+               │
+               ▼
+      PostgreSQL-Datenbank
+ ┌─────────────────────────────────────┐
+ │ Tabellen                            │
+ │ Beziehungen (PK/FK)                 │
+ │ Views                               │
+ │ Funktionen                          │
+ │ Trigger                             │
+ │ Indizes                             │
+ └─────────────────────────────────────┘
+               │
+     ┌─────────┴─────────┐
+     ▼                   ▼
+Python / Streamlit    Power BI
+ (Schreiben & Lesen)   (Lesen)
 ```
 
-Alle Daten werden zunächst in PostgreSQL gespeichert.
+Die Datenbank wurde auf Grundlage eines selbst entwickelten Entity-Relationship-Diagramms (ERD) aufgebaut.
 
-Die Anwendung greift anschließend auf Tabellen, Views und Funktionen der Datenbank zu. Dadurch existiert eine zentrale und konsistente Datenbasis für alle Auswertungen.
+Die Streamlit-Anwendung nutzt Tabellen, Views und Funktionen zur täglichen Verwaltung der Geschäftsprozesse. Power BI greift auf dieselbe Datenbasis – insbesondere auf vorbereitete SQL-Views – zu, um Dashboards, KPIs und Berichte bereitzustellen.
 
+Vorhandene Excel- und CSV-Dateien wurden ausschließlich einmalig zur Migration historischer Daten in die PostgreSQL-Datenbank verwendet.
 ---
 
 # 📂 Aufbau des SQL-Ordners
