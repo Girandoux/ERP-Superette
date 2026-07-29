@@ -88,7 +88,7 @@ Das ERP-System besteht aus mehreren logisch getrennten Komponenten, die gemeinsa
 
 Oder als grafische Darstellung:
 
-![Projektarchitektur](images/architecture/architecture-data_flow.jpg)
+![Projektarchitektur](images/architecture/data_flow.png)
 
 Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des Projekts. Die Streamlit-Anwendung greift lesend und schreibend auf die Datenbank zu und unterstützt den täglichen Geschäftsbetrieb. Power BI nutzt dieselbe Datenbasis ausschließlich lesend, um Dashboards, Kennzahlen und Managementberichte bereitzustellen.
 
@@ -114,7 +114,7 @@ Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des Projekts. Die Stream
 
 Die folgende Abbildung zeigt die Gesamtarchitektur des ERP-Systems sowie den Datenfluss zwischen den einzelnen Komponenten.
 
-![Projektarchitektur](images/architecture/architecture-data_flow.jpg)
+![Projektarchitektur](images/architecture/architecture.jpg)
 
 Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des Systems.
 
@@ -417,7 +417,7 @@ Weitere Screenshots befinden sich im Ordner **`images/`**.
 
 Alle Komponenten des ERP-Systems greifen auf dieselbe zentrale PostgreSQL-Datenbank zu.
 
-![Datenfluss](images/architecture/architecture-data_flow.jpg)
+![Datenfluss](images/architecture/data_flow.png)
 
 ## Prozessbeschreibung
 

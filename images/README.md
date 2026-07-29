@@ -84,7 +84,7 @@ images/architecture/
 
 Datei:
 
-- `architecture_data_flow.jpg`
+- `architecture.jpg`
 
 Dieses Diagramm zeigt den gesamten Datenfluss des Projekts – von der Datenmigration über den Python-ETL-Prozess bis zur PostgreSQL-Datenbank sowie der Nutzung durch Streamlit ERP und Power BI.
 
