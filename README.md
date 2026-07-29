@@ -356,12 +356,6 @@ Nachfolgend einige Ansichten der Power-BI-Dashboards sowie der Streamlit-ERP-Anw
 
 ---
 
-# 🖼️ Screenshots
-
-Nachfolgend einige Ansichten der Power-BI-Dashboards sowie der Streamlit-ERP-Anwendung.
-
----
-
 # 📊 Power BI Dashboards
 
 ### Berichtstitel
