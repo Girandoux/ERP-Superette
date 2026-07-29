@@ -1,262 +1,497 @@
-﻿# 🛒 Gestion de Superette
+﻿# 🛒 ERP Superette
 
-## Datenanalyse- und Verwaltungssystem für eine kleine Superette
+# Digitalisierung und Analyse der Geschäftsprozesse einer kleinen Superette
 
 > [!NOTE]
-> **Projektkontext**
+> ## Projektkontext
 >
 > Dieses Projekt basiert auf einem realen Anwendungsfall einer kleinen Superette in Kamerun.
 >
-> Nach einer Analyse der Geschäftsprozesse entwickelte ich eine vollständige Datenlösung bestehend aus einer PostgreSQL-Datenbank, einer ERP-Anwendung mit Python und Streamlit sowie interaktiven Power BI-Dashboards.
+> Ziel war es, die täglichen Geschäftsprozesse vollständig zu digitalisieren und eine zentrale Datenplattform für die Verwaltung sowie Analyse aller Geschäftsdaten zu entwickeln.
 >
-> Ziel war es, die täglichen Geschäftsprozesse – darunter Einkauf, Verkauf, Lagerverwaltung, Inventur, Betriebsausgaben und Kassenführung – zu digitalisieren, zentral zu verwalten und durch aussagekräftige Analysen sowie KPIs fundierte betriebliche Entscheidungen zu unterstützen.
+> Dafür wurde eine End-to-End-Lösung konzipiert und implementiert, bestehend aus einer PostgreSQL-Datenbank, einer ERP-Anwendung mit Python und Streamlit sowie interaktiven Power-BI-Dashboards.
+>
+> Die Lösung unterstützt die Verwaltung von Produkten, Einkäufen, Verkäufen, Lagerbeständen, Inventuren, Verlusten, Betriebsausgaben und Kassenbewegungen. Gleichzeitig liefert sie aktuelle Kennzahlen und Berichte als Grundlage für fundierte betriebliche Entscheidungen.
+
 ---
 
-## 📖 Projektübersicht
+# 📖 Projektübersicht
 
-**Gestion de Superette** ist eine vollständige Datenanwendung zur Verwaltung einer kleinen Superette.
+**ERP Superette** ist ein vollständiges End-to-End-Datenprojekt zur Digitalisierung der Geschäftsprozesse einer kleinen Superette.
 
-Das Projekt verbindet **PostgreSQL**, **Python**, **Streamlit** und **Power BI** zu einer gemeinsamen Lösung.
+Das Projekt kombiniert **PostgreSQL**, **Python**, **SQLAlchemy**, **Streamlit** und **Power BI** zu einer integrierten Lösung für Datenmanagement, Geschäftsprozessverwaltung und Business Intelligence.
 
-Mit der Anwendung können unter anderem folgende Geschäftsprozesse verwaltet werden:
+Die PostgreSQL-Datenbank bildet dabei die zentrale Datenbasis des Systems. Die Streamlit-Anwendung ermöglicht die tägliche Erfassung und Verwaltung der Geschäftsdaten, während Power BI dieselbe Datenbasis nutzt, um interaktive Dashboards, KPIs und Managementberichte bereitzustellen.
 
-- 📦 Produkte
-- 🛍️ Einkäufe
-- 💰 Verkäufe
-- 📊 Lagerbestand
+Das System unterstützt unter anderem folgende Geschäftsprozesse:
+
+- 📦 Produktverwaltung
+- 🛒 Einkaufsverwaltung
+- 💰 Verkaufsverwaltung
+- 📊 Lagerverwaltung
 - 📋 Inventur
-- 📉 Verluste
+- 📉 Verlustmanagement
 - 💳 Betriebsausgaben
 - 💵 Kassenverwaltung
-- 📈 Berichte und Dashboards
-
-Alle Daten werden zentral in PostgreSQL gespeichert und anschließend in Streamlit und Power BI genutzt.
+- 📈 Dashboards und Managementberichte
 
 ---
 
-## 🚀 Projektziele
+# 🎯 Projektziele
 
-Bei der Entwicklung des ERP-Systems standen folgende Ziele im Vordergrund:
+Im Mittelpunkt des Projekts standen sowohl die Digitalisierung der Geschäftsprozesse als auch die Entwicklung einer modernen Datenplattform.
 
-- Analyse und Digitalisierung der Geschäftsprozesse einer kleinen Superette
-- Entwicklung eines flexiblen und erweiterbaren ERP-Systems für den täglichen Geschäftsbetrieb
-- Entwurf eines relationalen Datenmodells (ERD) als Grundlage der PostgreSQL-Datenbank
-- Zentrale und konsistente Verwaltung aller Geschäftsdaten in einer gemeinsamen Datenbank
-- Einmalige Migration bestehender Excel- und CSV-Daten in das neue System
-- Entwicklung einer benutzerfreundlichen Streamlit-Anwendung für die tägliche Datenerfassung
-- Bereitstellung aktueller Kennzahlen und Managementberichte mit Power BI
-- Modulare Softwarearchitektur für eine einfache Wartung und kontinuierliche Erweiterung entsprechend den Anforderungen des Ladenbesitzers
+Die wichtigsten Projektziele waren:
+
+- Analyse der bestehenden Geschäftsprozesse einer kleinen Superette
+- Digitalisierung und Optimierung der täglichen Arbeitsabläufe
+- Entwicklung eines relationalen Datenmodells (Entity-Relationship-Diagramm)
+- Aufbau einer zentralen PostgreSQL-Datenbank
+- Entwicklung einer modularen ERP-Anwendung mit Python und Streamlit
+- Implementierung eines ETL-Prozesses zur Migration bestehender Excel- und CSV-Daten
+- Bereitstellung interaktiver Dashboards und Managementberichte mit Power BI
+- Entwicklung einer wartbaren und erweiterbaren Softwarearchitektur mit klarer Trennung zwischen Datenhaltung, Geschäftslogik und Visualisierung
 
 ---
 
-## 🏗️ Projektarchitektur
+# 🏗️ Projektarchitektur
+
+Das ERP-System besteht aus mehreren logisch getrennten Komponenten, die gemeinsam eine vollständige Datenplattform bilden.
 
 ```text
-        Anforderungen des Ladenbesitzers
-                      │
-                      ▼
-             Geschäftsprozessanalyse
-                      │
-                      ▼
-          ERD und relationales Datenmodell
-                selbst entwickelt
-                      │
-                      ▼
-             PostgreSQL-Datenbank
-                selbst aufgebaut
-                      │
-       ┌──────────────┴──────────────┐
-       │                             │
-       ▼                             ▼
-Einmaliger Datenimport        Streamlit-Anwendung
-  aus Excel / CSV             für den täglichen Betrieb
-       │                             │
-       └──────────────┬──────────────┘
-                      ▼
-             Python-Anwendungslogik
-        database/ + utils/ + SQLAlchemy
-                      │
-          ┌───────────┴───────────┐
-          ▼                       ▼
-       Reports              Power BI
-                                  │
-                                  ▼
-                    Analyse und Management-KPIs
+                Anforderungen des Ladenbesitzers
+                              │
+                              ▼
+                  Analyse der Geschäftsprozesse
+                              │
+                              ▼
+              Konzeption des relationalen Datenmodells
+                         (ERD & Datenbankdesign)
+                              │
+                              ▼
+                    PostgreSQL-Datenbank
+                     (Zentrale Datenbasis)
+                              ▲
+                              │
+                 Python ETL-Prozess (CSV/Excel)
+                              │
+          ┌───────────────────┴───────────────────┐
+          │                                       │
+          ▼                                       ▼
+   Streamlit ERP                          Power BI Dashboard
+ (Lesen & Schreiben)                     (Nur Lesen)
+          │                                       │
+          └───────────────────┬───────────────────┘
+                              ▼
+                   Analyse, Reporting und KPIs
 ```
 
----
+Oder als grafische Darstellung:
 
-## 🛠️ Verwendete Technologien
+![Projektarchitektur](images/architecture/architecture-data_flow.jpg)
+
+Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des Projekts. Die Streamlit-Anwendung greift lesend und schreibend auf die Datenbank zu und unterstützt den täglichen Geschäftsbetrieb. Power BI nutzt dieselbe Datenbasis ausschließlich lesend, um Dashboards, Kennzahlen und Managementberichte bereitzustellen.
+
+---
+# 🛠️ Verwendete Technologien
 
 | Bereich | Technologien |
 |----------|--------------|
 | Programmiersprache | Python |
 | Datenbank | PostgreSQL |
 | SQL | PostgreSQL SQL |
+| ORM | SQLAlchemy |
+| Datenbanktreiber | Psycopg2 |
 | Benutzeroberfläche | Streamlit |
 | Business Intelligence | Power BI |
 | Datenverarbeitung | Pandas, NumPy |
-| Datenbankzugriff | SQLAlchemy, Psycopg2 |
-| Visualisierung | Plotly |
+| Datenvisualisierung | Plotly |
 | Versionsverwaltung | Git & GitHub |
 
 ---
 
-## ⭐ Projekt-Highlights
+# 🏛️ Systemarchitektur
 
-✔ Analyse der Geschäftsprozesse und Entwicklung der Systemanforderungen
+Die folgende Abbildung zeigt die Gesamtarchitektur des ERP-Systems sowie den Datenfluss zwischen den einzelnen Komponenten.
 
-✔ Entwurf des Entity-Relationship-Diagramms (ERD) und des relationalen Datenmodells
+![Projektarchitektur](images/architecture/architecture-data_flow.jpg)
 
-✔ Entwicklung einer vollständigen PostgreSQL-Datenbank mit Tabellen, Beziehungen, Views, Triggern, Funktionen und Indizes
+Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des Systems.
 
-✔ Entwicklung einer modularen ERP-Anwendung mit Python, SQLAlchemy und Streamlit
+Die wichtigsten Komponenten sind:
+
+- **Python ETL-Prozess** zur einmaligen Migration der Excel- und CSV-Daten
+- **PostgreSQL** als zentrale relationale Datenbank
+- **Streamlit ERP** für die tägliche Verwaltung der Geschäftsdaten
+- **Power BI** für interaktive Dashboards, Analysen und Managementberichte
+
+Alle Komponenten greifen auf dieselbe Datenbasis zu und gewährleisten dadurch konsistente und aktuelle Informationen.
+
+---
+
+# 🗂️ Relationales Datenmodell (ERD)
+
+Vor der Implementierung wurde ein vollständiges **Entity-Relationship-Diagramm (ERD)** entwickelt.
+
+Es bildet die Grundlage der PostgreSQL-Datenbank und definiert sämtliche Tabellen sowie deren Beziehungen.
+
+![Entity-Relationship-Diagramm](images/database/erd.jpg)
+
+Das relationale Datenmodell umfasst unter anderem:
+
+- Dimensionstabellen
+- Faktentabellen
+- SQL-Views
+- SQL-Funktionen
+- SQL-Trigger
+- Indizes
+
+Durch dieses Datenmodell werden sämtliche Geschäftsprozesse konsistent und nachvollziehbar abgebildet.
+
+---
+
+# ⭐ Projekt-Highlights
+
+✔ Analyse der Geschäftsprozesse einer kleinen Superette
+
+✔ Entwicklung eines vollständigen relationalen Datenmodells (ERD)
+
+✔ Aufbau einer PostgreSQL-Datenbank mit Tabellen, Beziehungen, Views, Triggern, Funktionen und Indizes
 
 ✔ Implementierung eines ETL-Prozesses zur Migration bestehender Excel- und CSV-Daten
 
-✔ Digitalisierung der täglichen Geschäftsprozesse (Einkauf, Verkauf, Lager, Inventur, Ausgaben und Kassenführung)
+✔ Entwicklung einer modularen ERP-Anwendung mit Python, SQLAlchemy und Streamlit
 
-✔ Entwicklung interaktiver Power BI-Dashboards für Analysen und Management-KPIs
+✔ Digitalisierung der Geschäftsprozesse für Einkauf, Verkauf, Lagerverwaltung, Inventur, Verluste, Betriebsausgaben und Kassenführung
 
-✔ Kontinuierliche Weiterentwicklung des Systems entsprechend den Anforderungen des Ladenbesitzers
+✔ Entwicklung interaktiver Power-BI-Dashboards mit KPIs und Managementberichten
+
+✔ Modulare und wartbare Softwarearchitektur mit klarer Trennung zwischen Datenhaltung, Geschäftslogik und Visualisierung
+
 ---
-## 📂 Projektstruktur
+
+# 📂 Projektstruktur
 
 ```text
-Gestion_Superette/
+ERP_Superette/
 │
-├── data/                 # CSV-Dateien
-├── database/             # PostgreSQL-Datenbank
-├── sql/                  # SQL-Skripte
-├── streamlit/            # Streamlit-Anwendung
-├── powerbi/              # Power BI Dashboard
-├── images/               # Screenshots
-├── docs/                 # Projektdokumentation
+├── config/              # Konfiguration
+├── data/                # Rohdaten und Backups
+├── database/            # Python-Datenbankmodule
+├── docs/                # Projektdokumentation
+├── images/              # Architektur und Screenshots
+├── logs/                # Log-Dateien
+├── powerbi/             # Power BI Dashboard
+├── reports/             # Exportierte Berichte
+├── sql/                 # SQL-Skripte
+├── streamlit/           # Streamlit ERP
+├── tests/               # Unit-Tests
+├── utils/               # Hilfsfunktionen
+│
+├── app.py
 ├── requirements.txt
-├── LICENSE
+├── LICENSE.txt
 └── README.md
 ```
 
----
+Weitere Informationen zu den einzelnen Komponenten befinden sich in den jeweiligen Unterordnern mit eigener Dokumentation.
 
+| Ordner | Beschreibung |
+|---------|--------------|
+| `config/` | Konfigurationsdateien und Datenbankeinstellungen |
+| `data/` | Rohdaten, Backups und importierte Dateien |
+| `database/` | Python-Module für den Datenbankzugriff |
+| `docs/` | Projektdokumentation, Architektur und ERD |
+| `images/` | Architekturdiagramme und Screenshots |
+| `logs/` | Protokolldateien |
+| `powerbi/` | Power-BI-Dashboard |
+| `reports/` | Exportierte Berichte (Excel, CSV, PDF) |
+| `sql/` | SQL-Skripte für Datenbank, Views, Trigger und Funktionen |
+| `streamlit/` | Streamlit-ERP-Anwendung |
+| `tests/` | Unit-Tests |
+| `utils/` | Hilfsfunktionen und Geschäftslogik |
+
+---
 # ⚙️ Hauptfunktionen
 
-Die Anwendung unterstützt die wichtigsten Geschäftsprozesse einer kleinen Superette.
+Die ERP-Anwendung unterstützt sämtliche zentralen Geschäftsprozesse einer kleinen Superette – von der Stammdatenverwaltung bis hin zu Analysen und Berichten.
 
-### 📦 Produktverwaltung
+---
 
-- Produkte anlegen und bearbeiten
-- Produktkategorien verwalten
-- Lagerbestand überwachen
+## 📦 Produktverwaltung
 
-### 🛒 Einkaufsverwaltung
+Die Produktverwaltung bildet die Grundlage des Systems.
 
-- Einkäufe erfassen
+### Funktionen
+
+- Produkte anlegen, bearbeiten und verwalten
+- Produktkategorien zuordnen
+- Einkaufspreise und Verkaufspreise verwalten
+- Mindestbestände definieren
+- Lagerbestände überwachen
+- Automatische Produktcodes verwenden
+
+---
+
+## 🛒 Einkaufsverwaltung
+
+Alle Wareneinkäufe können zentral erfasst und verwaltet werden.
+
+### Funktionen
+
+- Einkaufsrechnungen erstellen
 - Einkaufspositionen verwalten
+- Automatische Rechnungsnummern vergeben
 - Einkaufskosten berechnen
+- Wareneingänge dokumentieren
+- Lagerbestand automatisch aktualisieren
 
-### 💰 Verkaufsverwaltung
+---
+
+## 💰 Verkaufsverwaltung
+
+Die Verkaufsverwaltung ermöglicht die vollständige Erfassung aller Verkäufe.
+
+### Funktionen
 
 - Verkäufe erfassen
 - Verkaufspositionen verwalten
-- Umsatz berechnen
+- Produkte schnell suchen
+- Verkaufspreise automatisch übernehmen
+- Lagerbestand prüfen
+- Warnung bei negativer Marge
+- Umsatz automatisch berechnen
 
-### 📋 Inventur
+---
 
-- Theoretischen und tatsächlichen Bestand vergleichen
+## 📊 Lagerverwaltung
+
+Die Lagerverwaltung sorgt für eine kontinuierliche Bestandskontrolle.
+
+### Funktionen
+
+- Aktuellen Lagerbestand anzeigen
+- Mindestbestände überwachen
+- Lagerbewegungen verfolgen
+- Lagerwert berechnen
+- Bestandsänderungen dokumentieren
+
+---
+
+## 📋 Inventur
+
+Die Inventurfunktion unterstützt den Vergleich zwischen theoretischem und tatsächlichem Lagerbestand.
+
+### Funktionen
+
+- Inventuren durchführen
 - Inventurdifferenzen berechnen
-- Lagerkorrekturen dokumentieren
+- Bestandskorrekturen dokumentieren
+- Lagerbestände synchronisieren
+- Inventurhistorie verwalten
 
-### 📉 Verlustverwaltung
+---
 
-- Beschädigte oder verlorene Produkte erfassen
+## 📉 Verlustmanagement
+
+Nicht verkaufbare Produkte können dokumentiert und ausgewertet werden.
+
+### Funktionen
+
+- Verluste erfassen
 - Ursachen dokumentieren
-- Auswirkungen auf den Lagerbestand verfolgen
+- Auswirkungen auf den Lagerbestand berechnen
+- Verluststatistiken erstellen
 
-### 💳 Betriebsausgaben
+---
 
-- Betriebsausgaben verwalten
-- Auswertungen nach Kategorien erstellen
+## 💳 Betriebsausgaben
 
-### 📊 Dashboard und Berichte
+Alle betrieblichen Ausgaben werden zentral verwaltet.
+
+### Funktionen
+
+- Betriebsausgaben erfassen
+- Ausgabenkategorien verwalten
+- Kostenanalysen durchführen
+- Finanzübersichten erstellen
+
+---
+
+## 💵 Kassenverwaltung
+
+Die Kassenverwaltung dokumentiert sämtliche Geldbewegungen.
+
+### Funktionen
+
+- Einzahlungen erfassen
+- Auszahlungen erfassen
+- Kassenbestand überwachen
+- Kassensaldo berechnen
+- Kassenhistorie verwalten
+
+---
+
+## 📈 Dashboard und Berichte
+
+Für Management und Analyse stehen umfangreiche Berichte zur Verfügung.
+
+### Funktionen
 
 - Interaktive Dashboards
 - Verkaufsanalysen
 - Einkaufsanalysen
 - Lageranalysen
-- Finanzübersichten
+- Finanzanalysen
+- KPI-Übersichten
+- Excel-Export
+- CSV-Export
+- PDF-Export
 
 ---
 
 # 🖼️ Screenshots
 
-Einige Ansichten der Anwendung.
-
-## Streamlit
-
-![Dashboard](images/streamlit/streamlit_accueil.png)
-
-## Power BI
-
-![Power BI Dashboard](images/powerbi/dashboard_overview.png)
-
-> Die verwendeten Bilder dienen als Beispiele. Weitere Screenshots befinden sich im Ordner **images/**.
+Nachfolgend einige Ansichten der Power-BI-Dashboards sowie der Streamlit-ERP-Anwendung.
 
 ---
+
+# 🖼️ Screenshots
+
+Nachfolgend einige Ansichten der Power-BI-Dashboards sowie der Streamlit-ERP-Anwendung.
+
+---
+
+# 📊 Power BI Dashboards
+
+### Berichtstitel
+
+![Report Cover](images/powerbi/report_cover.png)
+
+### Dashboard-Übersicht
+
+![Dashboard Overview](images/powerbi/dashboard_overview.png)
+
+### Verkaufsdashboard
+
+![Ventes Dashboard](images/powerbi/ventes_dashboard.png)
+
+### Einkaufsdashboard
+
+![Achats Dashboard](images/powerbi/achats_dashboard.png)
+
+### Lagerdashboard
+
+![Stock Dashboard](images/powerbi/stock_dashboard.png)
+
+### Inventurdashboard
+
+![Inventaire Dashboard](images/powerbi/inventaire_dashboard.png)
+
+### Finanzdashboard
+
+![Finance Dashboard](images/powerbi/finance_dashboard.png)
+
+### Operative Detailanalyse
+
+![Operational Details](images/powerbi/operational_details.png)
+
+---
+
+# 🖥️ Streamlit ERP
+
+### Dashboard
+
+![Streamlit Dashboard](images/streamlit/streamlit_dashboard.png)
+
+### Verkaufsverwaltung
+
+![Streamlit Ventes](images/streamlit/streamlit_ventes.png)
+
+---
+
+Weitere Screenshots befinden sich im Ordner **`images/`**.
+---
+
 # 🔄 Datenfluss
 
-Die PostgreSQL-Datenbank bildet die zentrale Datenbasis des ERP-Systems.
+Alle Komponenten des ERP-Systems greifen auf dieselbe zentrale PostgreSQL-Datenbank zu.
 
-Zu Beginn wurden vorhandene Geschäftsdaten einmalig aus Excel- und CSV-Dateien in die Datenbank übernommen. Im täglichen Betrieb werden alle neuen Daten direkt über die Streamlit-Anwendung erfasst und in der Datenbank gespeichert. Power BI greift auf dieselbe Datenbasis zu und erstellt aktuelle Analysen und Berichte.
+![Datenfluss](images/architecture/architecture-data_flow.jpg)
 
-```text
-            Einmaliger Import
-           Excel- / CSV-Dateien
-                    │
-                    ▼
-        PostgreSQL-Datenbank
-                    ▲
-                    │
-      Streamlit-Anwendung (ERP)
-      Produktivbetrieb
-      • Produkte
-      • Einkäufe
-      • Verkäufe
-      • Inventur
-      • Ausgaben
-      • Kassenführung
-                    │
-                    ▼
-      Reports & Power BI Dashboards
-```
+## Prozessbeschreibung
 
-Dadurch arbeiten alle Komponenten mit derselben zentralen Datenbasis. Änderungen, die in der Streamlit-Anwendung vorgenommen werden, stehen unmittelbar für Berichte, Auswertungen und Power BI-Dashboards zur Verfügung.
+1. Stammdaten und Geschäftsdaten werden einmalig aus Excel- und CSV-Dateien übernommen.
+2. Ein Python-ETL-Prozess bereinigt und importiert die Daten in PostgreSQL.
+3. Die Streamlit-Anwendung dient als ERP-System für den täglichen Geschäftsbetrieb und schreibt neue Daten direkt in die Datenbank.
+4. Power BI greift ausschließlich lesend auf vorbereitete SQL-Views zu und erstellt aktuelle Dashboards sowie Managementberichte.
+5. Alle Komponenten arbeiten mit derselben zentralen Datenbasis und gewährleisten dadurch konsistente Informationen.
+
 ---
 
-# 📚 Dokumentation
+# 📈 Projektumfang
 
-Weitere Informationen zu den einzelnen Projektbereichen befinden sich in den folgenden Dokumentationen.
+Das Projekt umfasst unter anderem folgende Komponenten:
 
-| Dokument | Inhalt |
-|----------|--------|
-| **sql/README.md** | PostgreSQL-Datenbank, Tabellen, Views, Trigger und Funktionen |
-| **streamlit/README.md** | Aufbau und Funktionen der Streamlit-Anwendung |
-| **powerbi/README.md** | Dashboard, Datenmodell, KPIs und DAX-Measures |
+- PostgreSQL-Datenbank
+- Relationales Datenmodell (ERD)
+- SQL-Skripte
+- SQL-Views
+- SQL-Funktionen
+- SQL-Trigger
+- ETL-Prozess
+- Python-Anwendungslogik
+- Streamlit-ERP-Anwendung
+- Power-BI-Dashboard
+- Exportfunktionen (Excel, CSV und PDF)
+- Projektdokumentation
+- Unit-Tests
 
 ---
 # 🚀 Installation
 
-## Projekt herunterladen
+## Voraussetzungen
+
+Für die Ausführung des Projekts werden folgende Komponenten benötigt:
+
+- Python 3.12 oder höher
+- PostgreSQL
+- Power BI Desktop
+- Git
+
+---
+
+## Repository klonen
 
 ```bash
-git clone https://github.com/Girandoux/Gestion_Superette.git
+git clone https://github.com/Girandoux/ERP-Superette.git
 
-cd Gestion_Superette
+cd ERP-Superette
 ```
 
 ---
 
-## Python-Abhängigkeiten installieren
+## Virtuelle Umgebung erstellen
+
+### Windows
+
+```powershell
+python -m venv .venv
+
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+
+source .venv/bin/activate
+```
+
+---
+
+## Abhängigkeiten installieren
 
 ```bash
 pip install -r requirements.txt
@@ -264,93 +499,158 @@ pip install -r requirements.txt
 
 ---
 
-## PostgreSQL-Datenbank einrichten
+## PostgreSQL konfigurieren
 
-Vor dem Start der Anwendung muss die PostgreSQL-Datenbank erstellt werden.
+1. PostgreSQL installieren.
+2. Eine neue Datenbank erstellen.
+3. Die Verbindungsdaten in der Datei
 
-Alle benötigten SQL-Skripte befinden sich im Ordner:
+```text
+config/database.py
+```
+
+anpassen.
+
+---
+
+## Datenbank erstellen
+
+Die SQL-Skripte befinden sich im Ordner
 
 ```text
 sql/
 ```
 
-Eine ausführliche Beschreibung der Datenbankinstallation befindet sich in:
+Sie sollten in folgender Reihenfolge ausgeführt werden:
 
-```text
-sql/README.md
-```
+1. `01_Create_Database.sql`
+2. `02_Import_CSV.sql`
+3. `05_Functions.sql`
+4. `06_Triggers.sql`
+5. `04_Views.sql`
+6. `07_Indexes.sql`
+7. `08_Migration_Vente_Declassee.sql`
+8. `03_SQL_Analytics.sql`
 
 ---
 
-## Streamlit starten
+## Streamlit-Anwendung starten
 
-Nach der Installation kann die Anwendung mit folgendem Befehl gestartet werden:
+Nach erfolgreicher Einrichtung kann die ERP-Anwendung gestartet werden.
 
 ```bash
 streamlit run app.py
 ```
 
-Standardmäßig öffnet sich die Anwendung unter:
-
-```text
-http://localhost:8501
-```
+Die Anwendung öffnet sich anschließend automatisch im Standard-Webbrowser.
 
 ---
 
-# 📌 Projektstatus
+# 📊 Power BI Dashboard
+
+Das Power-BI-Dashboard befindet sich im Ordner
+
+```text
+powerbi/
+```
+
+Datei:
+
+```text
+Superette_ERP_Dashboard_v1.pbix
+```
+
+Nach dem Öffnen müssen lediglich die Verbindungsdaten zur PostgreSQL-Datenbank angepasst und die Daten aktualisiert werden.
+
+---
+
+# 🗺️ Roadmap
 
 Dieses Projekt wird kontinuierlich weiterentwickelt.
 
 Geplante Erweiterungen sind unter anderem:
 
-- Benutzer- und Rollenverwaltung
-- Lieferantenverwaltung
-- Kundenverwaltung
-- Barcode-Unterstützung
-- Erweiterte Power BI Dashboards
-- Weitere Berichte und KPIs
-- Optimierung der Benutzeroberfläche
+- 🔐 Benutzer- und Rollenverwaltung
+- 👥 Lieferantenverwaltung
+- 🛍️ Kundenverwaltung
+- 📦 Barcode- und QR-Code-Unterstützung
+- 📊 Erweiterte Power-BI-Dashboards
+- 📈 Zusätzliche KPIs und Managementberichte
+- 🎨 Optimierung der Benutzeroberfläche
+- 🔔 Automatische Lagerbestandswarnungen
+- ☁️ Cloud-Deployment der Streamlit-Anwendung
 
 ---
 
-# 🎓 Was ich mit diesem Projekt umgesetzt habe
+# 🎯 Nachgewiesene Kompetenzen
 
-Mit diesem Projekt konnte ich praktische Erfahrungen in verschiedenen Bereichen der Datenanalyse und des Data Engineerings sammeln.
+Mit diesem Projekt konnte ich praktische Erfahrungen in den Bereichen **Data Engineering**, **Data Analytics**, **Business Intelligence** und **Softwareentwicklung** sammeln.
 
-Dabei kamen unter anderem folgende Technologien und Konzepte zum Einsatz:
+Zum Einsatz kamen unter anderem folgende Technologien und Konzepte:
 
 - PostgreSQL
 - SQL
 - Python
+- SQLAlchemy
+- Psycopg2
+- Pandas
+- NumPy
 - Streamlit
 - Power BI
-- SQLAlchemy
-- Pandas
-- Datenmodellierung
+- Plotly
 - ETL-Prozesse
+- Datenmodellierung (ERD)
+- Relationale Datenbanken
 - Star Schema
-- Datenvisualisierung
+- SQL Views
+- SQL Functions
+- SQL Triggers
 - Dashboard-Entwicklung
-- Git und GitHub
+- Git & GitHub
 
 ---
 
 # 📚 Dokumentation
 
-Weitere Informationen zu den einzelnen Projektbereichen befinden sich in den jeweiligen Unterordnern.
+Für die einzelnen Komponenten des Projekts stehen ausführliche Dokumentationen zur Verfügung.
 
-| Dokument | Beschreibung |
-|----------|--------------|
-| **sql/README.md** | PostgreSQL-Datenbank, Tabellen, Views, Trigger und SQL-Funktionen |
-| **streamlit/README.md** | Aufbau und Funktionen der Streamlit-Anwendung |
-| **powerbi/README.md** | Datenmodell, KPIs, DAX-Measures und Dashboard |
+| Dokumentation | Beschreibung |
+|--------------|--------------|
+| `docs/README.md` | Projektübersicht, Architektur und ERD |
+| `data/README.md` | Datenquellen und ETL-Prozess |
+| `images/README.md` | Architekturdiagramme und Screenshots |
+| `sql/README.md` | PostgreSQL-Datenbank, Tabellen, Views, Trigger und Funktionen |
+| `streamlit/README.md` | Aufbau und Funktionen der ERP-Anwendung |
+| `powerbi/README.md` | Datenmodell, Dashboards und KPIs |
+
+---
+
+# 📂 Weitere Projektinformationen
+
+Eine detaillierte Beschreibung der einzelnen Komponenten befindet sich in den jeweiligen Unterordnern.
+
+```text
+config/
+data/
+database/
+docs/
+images/
+logs/
+powerbi/
+reports/
+sql/
+streamlit/
+tests/
+utils/
+```
 
 ---
 
 # 👨‍💻 Autor
 
-**Girandoux Fandio**
+**Girandoux Fandio Nganwajop**
+
+**Data Analyst | Data Engineer | Data Scientist**
 
 Dipl.-Ing. (FH) Maschinenbau
 
@@ -368,9 +668,9 @@ https://github.com/Girandoux
 
 # ⭐ Feedback
 
-Vielen Dank für dein Interesse an diesem Projekt.
+Vielen Dank für Ihr Interesse an diesem Projekt.
 
-Ich freue mich über Feedback, Verbesserungsvorschläge oder einen fachlichen Austausch zu den Themen:
+Ich freue mich über Feedback, Verbesserungsvorschläge oder einen fachlichen Austausch zu folgenden Themen:
 
 - Data Analytics
 - Data Engineering
@@ -380,4 +680,26 @@ Ich freue mich über Feedback, Verbesserungsvorschläge oder einen fachlichen Au
 - Power BI
 - Business Intelligence
 
-Wenn dir das Projekt gefällt, freue ich mich über einen ⭐ auf GitHub.
+Wenn Ihnen dieses Projekt gefällt oder Sie meine Arbeit interessant finden, freue ich mich über einen ⭐ auf GitHub.
+
+---
+
+# 📄 Lizenz
+
+Dieses Projekt steht unter der **MIT License**.
+
+Weitere Informationen finden Sie in der Datei
+
+```text
+LICENSE.txt
+```
+
+---
+
+# 🙏 Danksagung
+
+Dieses Projekt entstand auf Grundlage eines realen Anwendungsfalls einer kleinen Superette in Kamerun.
+
+Es wurde entwickelt, um Geschäftsprozesse zu analysieren, zu digitalisieren und durch moderne Methoden des **Data Engineerings**, der **Business Intelligence** und der **Softwareentwicklung** nachhaltig zu unterstützen.
+
+Gleichzeitig dient das Projekt als Portfolio und demonstriert meine Fähigkeiten in den Bereichen Datenmodellierung, Datenbanken, ETL-Prozesse, Python-Entwicklung, Dashboard-Entwicklung und Datenvisualisierung.

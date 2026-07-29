@@ -6,45 +6,55 @@ Entwicklung einer vollständigen Datenlösung für eine kleine Superette – von
 
 ------------------------------------------------------------------------
 
-2. Projektarchitektur
+2. Projektarchitektur – ERP Superette
 
- Geschäftsanforderungen
-(Ladenbesitzer)
-        │
-        ▼
-Anforderungsanalyse
-        │
-        ▼
-ERD / Datenmodell
-(selbst entwickelt)
-        │
-        ▼
+        Geschäftsanforderungen
+           (Ladenbesitzer)
+                  │
+                  ▼
+         Anforderungsanalyse
+                  │
+                  ▼
+      ERD / Relationales Datenmodell
+          (selbst entwickelt)
+                  │
+                  ▼
+      PostgreSQL-Datenbank
+(Tabellen • Views • Trigger • Funktionen)
+                  ▲
+                  │
+        SQLAlchemy / database
+          (CRUD & Datenzugriff)
+                  ▲
+                  │
+       Python (utils / Geschäftslogik)
+                  ▲
+                  │
+          Streamlit ERP
+       (Produktivbetrieb)
+                  ▲
+                  │
+        Benutzer / Superette
+
+Historische Daten
+CSV / Excel
+      │
+      ▼
+     ETL
+      │
+      └──────────────► PostgreSQL
+
 PostgreSQL
-(Datenbankdesign)
-        │
- ┌──────┴────────┐
- │               │
- ▼               ▼
-ETL          Streamlit ERP
-(Erstimport) (Produktivbetrieb)
- │               │
- └──────┬────────┘
-        ▼
- database
-(CRUD + SQLAlchemy)
-        │
-        ▼
- utils
-(Geschäftslogik)
-        │
-        ▼
+      │
+      ▼
 Power BI
-(Dashboards & Reports)
-        │
-        ▼
+(Dashboards • KPIs • Reporting)
+
+      │
+      ▼
 Neue Anforderungen
-        │
-        └──────────────► zurück zum ERD
+      │
+      └──────────────► zurück zur Anforderungsanalyse
 
 ------------------------------------------------------------------------
 
@@ -231,8 +241,11 @@ docs/
 
 Zusätzliche Projektdokumentation.
 
-- screenshots → Screenshots der Streamlit-Anwendung
-- pdf → PDF-Versionen der Screenshots
+- README.md → Übersicht der Projektdokumentation
+- Projektuebersicht_Superette.md → Strukturierte Projektübersicht
+- Projektuebersicht_Superette.pdf → PDF-Version der Projektübersicht
+- Projektarchitektur_ERP_Superette.pdf → Architekturdiagramm des Projekts
+- ERD_Description.md → Beschreibung des Datenmodells und der Tabellenbeziehungen
 
 ------------------------------------------------------------------------
 

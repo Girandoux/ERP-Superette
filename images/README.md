@@ -1,133 +1,208 @@
-﻿# 🖼️ Bilder und Screenshots
+# 🖼️ Bilder und Screenshots
 
-## Bildmaterial des Projekts „Gestion de Superette“
+## Ziel
 
-> [!NOTE]
-> **Projektkontext**
->
-> Dieses Projekt basiert auf einem realen Anwendungsfall einer kleinen Superette in Kamerun.
->
-> Die Bilder in diesem Ordner dokumentieren die Benutzeroberfläche der Streamlit-Anwendung, das Power BI Dashboard sowie die Architektur und weitere Bestandteile des Projekts. Sie dienen dazu, einen schnellen Überblick über die wichtigsten Funktionen zu geben.
+Der Ordner **`images/`** enthält alle Bilder und Screenshots des Projekts **ERP Superette**.
 
----
+Die Bilder dokumentieren die Benutzeroberfläche der Streamlit-Anwendung, das Power-BI-Dashboard, die Projektarchitektur sowie die PostgreSQL-Datenbank.
 
-# 📖 Inhaltsverzeichnis
-
-- Übersicht
-- Aufbau des Ordners
-- Verwendete Bilder
-- Verwendung in der Dokumentation
-- Hinweise
+Sie ergänzen die Projektdokumentation und erleichtern das Verständnis der wichtigsten Funktionen und Komponenten.
 
 ---
 
-# 🎯 Übersicht
-
-Der Ordner **images/** enthält alle Bilder, die in der Projektdokumentation verwendet werden.
-
-Dazu gehören unter anderem:
-
-- GitHub-Banner
-- Screenshots der Streamlit-Anwendung
-- Screenshots des Power BI Dashboards
-- Architekturdiagramme
-- Weitere Abbildungen zur Dokumentation
-
-Alle Bilder wurden erstellt, um die Funktionsweise des Projekts anschaulich darzustellen.
-
----
-
-# 📂 Aufbau des Ordners
+# Struktur
 
 ```text
 images/
 │
-├── github_banner.png
-├── architecture.png
-├── readme/
-│   ├── streamlit_accueil.png
-│   ├── streamlit_dashboard.png
-│   ├── streamlit_produits.png
-│   ├── powerbi_couverture.png
-│   ├── powerbi_vue_generale.png
-│   └── ...
-└── README.md
+├── README.md
+├── logo.png
+│
+├── architecture/
+│   └── architecture_data_flow.jpg
+│
+├── database/
+│   ├── database_schema.png
+│   ├── erd.jpg
+│   ├── postgresql_tables.png
+│   ├── sql_functions.png
+│   ├── sql_queries.png
+│   ├── sql_triggers.png
+│   └── sql_views.png
+│
+├── powerbi/
+│   ├── report_cover.png
+│   ├── dashboard_overview.png
+│   ├── ventes_dashboard.png
+│   ├── achats_dashboard.png
+│   ├── stock_dashboard.png
+│   ├── finance_dashboard.png
+│   ├── inventaire_dashboard.png
+│   └── operational_details.png
+│
+└── streamlit/
+    ├── streamlit_accueil.png
+    ├── streamlit_produits.png
+    ├── streamlit_categories.png
+    ├── streamlit_achats.png
+    ├── streamlit_ligne_achat.png
+    ├── streamlit_ventes.png
+    ├── streamlit_lignes_vente.png
+    ├── streamlit_depenses.png
+    ├── streamlit_perte.png
+    ├── streamlit_tresorie.png
+    ├── streamlit_inventaire.png
+    ├── streamlit_raport.png
+    ├── streamlit_dashboard.png
+    ├── streamlit_administration.png
+    └── streamlit_a_propos.png
 ```
-
-Je nach Weiterentwicklung des Projekts können weitere Bilder ergänzt werden.
 
 ---
 
-# 🖼️ Verwendete Bilder
+# Inhalt
 
-Die wichtigsten Bilder sind:
+Der Ordner enthält folgende Bildtypen:
+
+- Projektlogo
+- Projektarchitektur
+- Datenbankdiagramme
+- ERD-Diagramm
+- SQL-Übersichten
+- Screenshots der Streamlit-Anwendung
+- Screenshots des Power-BI-Dashboards
+
+---
+
+# Projektarchitektur
+
+Die Projektarchitektur befindet sich im Ordner:
+
+```text
+images/architecture/
+```
+
+Datei:
+
+- `architecture_data_flow.jpg`
+
+Dieses Diagramm zeigt den gesamten Datenfluss des Projekts – von der Datenmigration über den Python-ETL-Prozess bis zur PostgreSQL-Datenbank sowie der Nutzung durch Streamlit ERP und Power BI.
+
+---
+
+# Datenbankbilder
+
+Der Ordner
+
+```text
+images/database/
+```
+
+enthält die wichtigsten Diagramme der PostgreSQL-Datenbank.
 
 | Bild | Beschreibung |
 |------|--------------|
-| **github_banner.png** | Banner auf der GitHub-Startseite des Projekts |
-| **architecture.png** | Übersicht der Projektarchitektur |
-| **streamlit_*.png** | Screenshots der einzelnen Seiten der Streamlit-Anwendung |
-| **powerbi_*.png** | Screenshots der Power BI Berichte und Dashboards |
-
-Die Bilder werden an verschiedenen Stellen der Dokumentation verwendet und helfen dabei, die Struktur und die Funktionen des Projekts schneller zu verstehen.
-
----
-# 📄 Verwendung in der Dokumentation
-
-Die Bilder werden in den verschiedenen README-Dateien verwendet, um die wichtigsten Funktionen des Projekts zu veranschaulichen.
-
-Sie kommen unter anderem in folgenden Dokumentationen zum Einsatz:
-
-| Dokument | Verwendete Bilder |
-|----------|-------------------|
-| **README.md** | Projektübersicht, Banner, Architektur, Streamlit und Power BI |
-| **streamlit/README.md** | Screenshots der Streamlit-Anwendung |
-| **powerbi/README.md** | Screenshots der Power BI Dashboards |
-| **sql/README.md** | Architekturdiagramm und Datenmodell (optional) |
-
-Durch die Verwendung der Bilder wird die Dokumentation übersichtlicher und erleichtert das Verständnis des Projekts.
+| `database_schema.png` | Übersicht der Datenbankstruktur |
+| `erd.jpg` | Entity-Relationship-Diagramm (ERD) |
+| `postgresql_tables.png` | PostgreSQL-Tabellen |
+| `sql_views.png` | SQL Views |
+| `sql_functions.png` | SQL Functions |
+| `sql_triggers.png` | SQL Triggers |
+| `sql_queries.png` | Analytische SQL-Abfragen |
 
 ---
 
-# 💡 Hinweise
+# Streamlit-Screenshots
 
-Alle Bilder wurden für dieses Projekt erstellt und dienen ausschließlich der Dokumentation.
+Der Ordner
 
-Bei Änderungen an der Benutzeroberfläche oder am Power BI Dashboard sollten die entsprechenden Screenshots aktualisiert werden, damit die Dokumentation immer den aktuellen Stand des Projekts zeigt.
+```text
+images/streamlit/
+```
 
-Neue Bilder können jederzeit ergänzt werden, wenn weitere Funktionen oder Module hinzukommen.
+enthält Screenshots aller Seiten der Streamlit-ERP-Anwendung.
 
----
+Dazu gehören unter anderem:
 
-# 📚 Weiterführende Dokumentation
+- Startseite
+- Produktverwaltung
+- Kategorien
+- Einkäufe
+- Verkaufsverwaltung
+- Inventur
+- Lagerbestand
+- Berichte
+- Dashboard
+- Administration
+- Projektinformationen
 
-Weitere Informationen zum Projekt befinden sich in den folgenden Dokumentationen:
-
-- **README.md** – Projektübersicht
-- **sql/README.md** – PostgreSQL-Datenbank
-- **streamlit/README.md** – Streamlit-Anwendung
-- **powerbi/README.md** – Power BI Dashboard
-
----
-
-# 👨‍💻 Autor
-
-**Girandoux Fandio**
-
-Dipl.-Ing. (FH) Maschinenbau
-
-Weiterbildung:
-
-**Daten- und Prozessanalyse mit Python (Data Science Kompakt)**
-
-📍 Wolfsburg, Deutschland
-
-🔗 GitHub
-
-https://github.com/Girandoux
+Die Screenshots dokumentieren die Benutzeroberfläche und die wichtigsten Funktionen der Anwendung.
 
 ---
 
-Vielen Dank für dein Interesse an diesem Projekt.
+# Power-BI-Screenshots
 
-Ich freue mich über Feedback oder Anregungen zur weiteren Verbesserung der Dokumentation.
+Der Ordner
+
+```text
+images/powerbi/
+```
+
+enthält Screenshots des Power-BI-Dashboards.
+
+Dokumentiert werden unter anderem:
+
+- Cover-Seite
+- Dashboard-Übersicht
+- Verkaufsanalyse
+- Einkaufsanalyse
+- Lageranalyse
+- Finanzanalyse
+- Inventur und Verluste
+- Operative Detailanalysen
+
+Diese Bilder zeigen die wichtigsten Berichte und KPIs des Projekts.
+
+---
+
+# Verwendung
+
+Die Bilder werden in mehreren Projektbereichen verwendet.
+
+| Dokument | Zweck |
+|----------|------|
+| `README.md` | Projektübersicht |
+| `docs/README.md` | Projektdokumentation |
+| `streamlit/README.md` | Beschreibung der Streamlit-Anwendung |
+| `powerbi/README.md` | Beschreibung des Power-BI-Dashboards |
+| `sql/README.md` | SQL- und Datenbankdokumentation |
+
+---
+
+# Hinweise
+
+- Bilder sollten aktualisiert werden, wenn sich die Benutzeroberfläche oder das Dashboard wesentlich ändern.
+- Für GitHub werden aussagekräftige Dateinamen ohne Leerzeichen oder Sonderzeichen empfohlen.
+- Alle Screenshots sollten möglichst dieselbe Größe und eine gute Bildqualität besitzen.
+
+---
+
+# Verwandte Ordner
+
+```text
+docs/
+streamlit/
+powerbi/
+database/
+sql/
+```
+
+Diese Ordner verwenden die Bilder zur Dokumentation und Projektbeschreibung.
+
+---
+
+# Lizenz
+
+Dieser Ordner ist Bestandteil des Projekts **ERP Superette**.
+
+© 2026 Girandoux Fandio Nganwajop

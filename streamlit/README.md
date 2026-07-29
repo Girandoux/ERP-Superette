@@ -1,452 +1,373 @@
-﻿# 🌐 Streamlit-Anwendung
+# 🚀 Streamlit ERP-Anwendung
 
-## Benutzeroberfläche des Projekts „Gestion de Superette“
+## Ziel
 
-> [!NOTE]
-> **Projektkontext**
->
-> Dieses Projekt basiert auf einem realen Anwendungsfall einer kleinen Superette in Kamerun.
->
-> Die Streamlit-Anwendung bildet die zentrale Benutzeroberfläche des Projekts und ermöglicht die Verwaltung der täglichen Geschäftsprozesse – von der Produktverwaltung über Einkauf und Verkauf bis hin zur Lagerverwaltung, Inventur und Kassenführung.
->
-> Alle Daten werden direkt in einer PostgreSQL-Datenbank gespeichert und stehen anschließend für Analysen und interaktive Dashboards in Power BI zur Verfügung.
->
-> Ziel war es, eine moderne, benutzerfreundliche und praxisnahe Anwendung zu entwickeln, die den Arbeitsalltag einer kleinen Superette digital unterstützt.
+Der Ordner **`streamlit/`** enthält die Benutzeroberfläche des Projekts **ERP Superette**.
+
+Die Streamlit-Anwendung bildet den operativen Teil des Systems und ermöglicht die tägliche Verwaltung einer Superette.
+
+Über die Anwendung können Produkte, Kategorien, Einkäufe, Verkäufe, Lagerbestände, Inventuren, Verluste, Ausgaben und Kassenbewegungen verwaltet werden.
+
+Alle Daten werden direkt in der PostgreSQL-Datenbank gespeichert und stehen anschließend sowohl der Anwendung als auch dem Power-BI-Dashboard zur Verfügung.
 
 ---
 
-# 📖 Inhaltsverzeichnis
-
-- Projektübersicht
-- Ziele der Anwendung
-- Systemarchitektur
-- Aufbau des Streamlit-Ordners
-- Projektstruktur
-- Navigation
-- Hauptmodule
-- Datenfluss
-- Verbindung zur Datenbank
-- Installation
-- Verwendete Bibliotheken
-- Weiterführende Dokumentation
-
----
-
-# 🎯 Projektübersicht
-
-Diese Streamlit-Anwendung bildet die zentrale Benutzeroberfläche des Projekts.
-
-Über die Anwendung können alle wichtigen Daten der Superette verwaltet werden.
-
-Dazu gehören unter anderem:
-
-- Produkte
-- Kategorien
-- Einkäufe
-- Verkäufe
-- Lagerbestand
-- Inventur
-- Verluste
-- Betriebsausgaben
-- Kassenverwaltung
-- Berichte
-
-Alle Änderungen werden direkt in der PostgreSQL-Datenbank gespeichert und stehen anschließend sofort für Auswertungen zur Verfügung.
-
----
-
-# 🚀 Ziele der Anwendung
-
-Bei der Entwicklung der Anwendung standen folgende Ziele im Vordergrund:
-
-- einfache Bedienung
-- übersichtliche Navigation
-- schnelle Datenerfassung
-- automatische Berechnungen
-- direkte Verbindung zur PostgreSQL-Datenbank
-- Unterstützung der täglichen Arbeitsabläufe
-- Bereitstellung aktueller Daten für Power BI
-
-Die Anwendung soll die tägliche Verwaltung der Superette vereinfachen und gleichzeitig eine zuverlässige Datenbasis für Analysen bereitstellen.
-
----
-
-# 🏛️ Systemarchitektur
-
-Die Streamlit-Anwendung ist ein Bestandteil der gesamten Projektarchitektur.
-
-```text
-                CSV-Dateien
-                     │
-                     ▼
-           PostgreSQL-Datenbank
-                     │
-         SQL-Tabellen und Views
-                     │
-                     ▼
-          Python / Streamlit-App
-                     │
-                     ▼
-              Power BI Dashboard
-```
-
-Alle Daten werden zunächst in PostgreSQL gespeichert.
-
-Die Streamlit-Anwendung liest diese Daten aus, ermöglicht deren Bearbeitung und schreibt Änderungen direkt zurück in die Datenbank.
-
----
-
-# 📂 Aufbau des Streamlit-Ordners
+# Projektstruktur
 
 ```text
 streamlit/
 │
-├── app.py
+├── README.md
+│
 ├── pages/
-├── components/
-├── utils/
-├── assets/
-├── config/
-└── README.md
-```
-
-Die Anwendung ist modular aufgebaut.
-
-Dadurch können neue Funktionen später einfach ergänzt werden, ohne die gesamte Anwendung ändern zu müssen.
-
----
-
-# 📁 Projektstruktur
-
-Die wichtigsten Ordner sind:
-
-| Ordner | Beschreibung |
-|---------|--------------|
-| **app.py** | Startpunkt der Streamlit-Anwendung |
-| **pages/** | Enthält die einzelnen Seiten der Anwendung |
-| **components/** | Wiederverwendbare Benutzeroberflächen und Funktionen |
-| **utils/** | Hilfsfunktionen für Datenbank, Berechnungen und Formatierungen |
-| **assets/** | Bilder, Logos und weitere Ressourcen |
-| **config/** | Konfigurationsdateien der Anwendung |
-
-Diese Struktur sorgt dafür, dass der Code übersichtlich bleibt und einzelne Module unabhängig weiterentwickelt werden können.
-
----
-
-# 🧭 Navigation
-
-Die Anwendung ist in mehrere Bereiche unterteilt.
-
-Je nach Aufgabe kann der Benutzer zwischen den verschiedenen Seiten wechseln.
-
-Die wichtigsten Bereiche sind:
-
-- Dashboard
-- Produits
-- Achats
-- Ventes
-- Inventaire
-- Pertes
-- Dépenses
-- Trésorerie
-- Rapports
-- Administration
-
-Dadurch sind alle Funktionen schnell erreichbar und logisch aufgebaut.
-
----
-# 📦 Hauptmodule
-
-Die Streamlit-Anwendung besteht aus mehreren Modulen.
-
-Jedes Modul übernimmt einen bestimmten Geschäftsprozess der Superette.
-
-Dadurch bleibt die Anwendung übersichtlich und kann später einfach erweitert werden.
-
-Die wichtigsten Module sind:
-
-| Modul | Beschreibung |
-|--------|--------------|
-| **Dashboard** | Zeigt die wichtigsten Kennzahlen und einen schnellen Überblick über die aktuelle Situation der Superette. |
-| **Produits** | Verwaltung der Produkte und Produktinformationen. |
-| **Achats** | Erfassung und Verwaltung der Einkäufe. |
-| **Ventes** | Verwaltung der Verkäufe und Verkaufspositionen. |
-| **Inventaire** | Durchführung der Inventur und Vergleich zwischen theoretischem und tatsächlichem Bestand. |
-| **Pertes** | Verwaltung beschädigter oder verlorener Produkte. |
-| **Dépenses** | Erfassung der Betriebsausgaben. |
-| **Trésorerie** | Übersicht über Einnahmen und Ausgaben der Kasse. |
-| **Rapports** | Anzeige verschiedener Berichte und Auswertungen. |
-
----
-
-# 🔄 Datenfluss
-
-Alle Daten werden direkt in der PostgreSQL-Datenbank gespeichert.
-
-Die Anwendung greift über Python auf die Datenbank zu, liest die benötigten Informationen aus und schreibt Änderungen sofort zurück.
-
-Der Datenfluss sieht vereinfacht wie folgt aus:
-
-```text
-Benutzer
-    │
-    ▼
-Streamlit
-    │
-    ▼
-Python
-    │
-    ▼
-PostgreSQL
-    │
-    ▼
-Power BI
-```
-
-Dadurch arbeiten alle Module immer mit denselben Daten.
-
-Es gibt keine doppelte Datenspeicherung.
-
----
-
-# 🗄️ Verbindung zur PostgreSQL-Datenbank
-
-Die Verbindung zur Datenbank erfolgt über Python.
-
-Alle SQL-Abfragen sind so aufgebaut, dass Daten sicher gelesen und gespeichert werden können.
-
-Je nach Funktion werden verwendet:
-
-- SQL-Abfragen
-- SQL-Views
-- SQL-Funktionen
-- SQL-Trigger
-
-Dadurch bleibt ein großer Teil der Geschäftslogik direkt in der Datenbank.
-
-Die Streamlit-Anwendung konzentriert sich hauptsächlich auf die Benutzeroberfläche und die Interaktion mit dem Benutzer.
-
----
-
-# 📋 Formulare und Tabellen
-
-Für die Datenerfassung werden verschiedene Formulare verwendet.
-
-Der Benutzer kann beispielsweise:
-
-- neue Produkte anlegen
-- Einkäufe erfassen
-- Verkäufe speichern
-- Inventuren durchführen
-- Betriebsausgaben erfassen
-- Verluste dokumentieren
-
-Viele Eingaben werden automatisch geprüft, bevor sie gespeichert werden.
-
-Dadurch werden fehlerhafte Eingaben reduziert.
-
----
-
-# 📊 Berichte und Auswertungen
-
-Die Anwendung stellt verschiedene Auswertungen direkt in Streamlit bereit.
-
-Zum Beispiel:
-
-- aktueller Lagerbestand
-- Umsätze
-- Einkaufsübersicht
-- Betriebsausgaben
-- Inventurdifferenzen
-- Produktstatistiken
-- Kassenübersicht
-
-Für umfangreichere Analysen werden dieselben Daten zusätzlich in Power BI verwendet.
-
----
-
-# 🎨 Benutzeroberfläche
-
-Bei der Entwicklung der Benutzeroberfläche wurde auf eine einfache Bedienung geachtet.
-
-Die wichtigsten Funktionen sind über das Navigationsmenü schnell erreichbar.
-
-Tabellen, Formulare und Diagramme sind übersichtlich aufgebaut und ermöglichen eine schnelle Datenerfassung.
-
-Die Anwendung kann sowohl auf einem Desktop-PC als auch auf einem Notebook genutzt werden.
-
----
-
-# 🔒 Datenqualität
-
-Eine gute Datenqualität war bei der Entwicklung besonders wichtig.
-
-Deshalb werden verschiedene Prüfungen bereits während der Dateneingabe durchgeführt.
-
-Beispiele:
-
-- Pflichtfelder werden geprüft.
-- Ungültige Eingaben werden verhindert.
-- Berechnungen erfolgen automatisch.
-- Lagerbestände werden aktualisiert.
-- Summen werden automatisch berechnet.
-
-Dadurch bleiben die gespeicherten Daten konsistent und zuverlässig.
-
----
-# 💻 Installation
-
-## Voraussetzungen
-
-Für die Ausführung der Anwendung werden folgende Programme benötigt:
-
-- Python 3.11 oder neuer
-- PostgreSQL
-- Git
-- Streamlit
-
-Zusätzlich sollten alle benötigten Python-Bibliotheken installiert sein.
-
----
-
-## Projekt herunterladen
-
-Repository klonen:
-
-```bash
-git clone https://github.com/Girandoux/Gestion_Superette.git
-
-cd Gestion_Superette
+│   ├── 01_Accueil.py
+│   ├── 02_Produits.py
+│   ├── 03_Categories.py
+│   ├── 04_Achats.py
+│   ├── 05_Lignes_Achat.py
+│   ├── 06_Ventes.py
+│   ├── 07_Lignes_Vente.py
+│   ├── 08_Depenses.py
+│   ├── 09_Pertes.py
+│   ├── 10_Tresorerie.py
+│   ├── 11_Inventaire.py
+│   ├── 12_Rapports.py
+│   ├── 13_Dashboard.py
+│   ├── 14_Administration.py
+│   └── 15_A_Propos.py
+│
+└── ui_state.json (lokal)
 ```
 
 ---
 
-## Benötigte Bibliotheken installieren
+# Anwendung starten
 
-```bash
-pip install -r requirements.txt
-```
+Die Anwendung kann mit folgendem Befehl gestartet werden.
 
----
-
-## PostgreSQL vorbereiten
-
-Vor dem Start der Anwendung muss die PostgreSQL-Datenbank erstellt werden.
-
-Dazu werden die SQL-Dateien im Ordner **sql/** in der empfohlenen Reihenfolge ausgeführt.
-
-Weitere Informationen dazu befinden sich in der Datei:
-
-```text
-sql/README.md
-```
-
----
-
-## Anwendung starten
-
-Nach der Installation kann die Anwendung mit folgendem Befehl gestartet werden:
-
-```bash
+```powershell
 streamlit run app.py
 ```
 
-Anschließend öffnet sich die Anwendung automatisch im Browser.
+Nach dem Start öffnet sich die Anwendung automatisch im Webbrowser.
 
-Standardmäßig ist sie unter folgender Adresse erreichbar:
+---
+
+# Systemarchitektur
+
+Die Streamlit-Anwendung kommuniziert direkt mit der PostgreSQL-Datenbank.
 
 ```text
-http://localhost:8501
+Benutzer
+      │
+      ▼
+Streamlit ERP
+      │
+      ▼
+Python-Module
+(database/ & utils/)
+      │
+      ▼
+PostgreSQL
+(Zentrale Datenbasis)
+      │
+      └────────────► Power BI
 ```
 
 ---
 
-# 📚 Verwendete Bibliotheken
+# Navigation
 
-Für die Entwicklung wurden unter anderem folgende Bibliotheken verwendet:
+Alle Seiten befinden sich im Ordner
 
-- Streamlit
-- Pandas
-- NumPy
-- SQLAlchemy
-- Psycopg2
-- Plotly
-- OpenPyXL
+```text
+streamlit/pages/
+```
 
-Je nach Modul kommen weitere Bibliotheken hinzu.
-
-Alle Abhängigkeiten sind in der Datei **requirements.txt** aufgeführt.
+Die Navigation wird zentral in **app.py** verwaltet.
 
 ---
 
-# 🔒 Datenintegrität
+# Seitenübersicht
 
-Ein wichtiger Schwerpunkt dieses Projekts ist die Sicherstellung einer hohen Datenqualität.
-
-Dafür werden mehrere Mechanismen eingesetzt:
-
-- Eingabeprüfungen in der Benutzeroberfläche
-- Validierungen in Python
-- Fremdschlüssel in PostgreSQL
-- SQL-Trigger
-- SQL-Funktionen
-- automatische Berechnungen
-
-Dadurch bleiben die Daten konsistent und fehlerhafte Eingaben werden weitgehend vermieden.
-
----
-
-# 🚀 Mögliche Erweiterungen
-
-Die Anwendung wurde bewusst modular aufgebaut und kann später problemlos erweitert werden.
-
-Geplante Erweiterungen sind zum Beispiel:
-
-- Mehrbenutzerverwaltung
-- Rollen- und Rechteverwaltung
-- Lieferantenverwaltung
-- Kundenverwaltung
-- Barcode-Scanner
-- Automatische Bestellvorschläge
-- E-Mail-Benachrichtigungen
-- Erweiterte Berichte
-- Mobile Optimierung
+| Seite | Beschreibung |
+|--------|--------------|
+| `01_Accueil.py` | Startseite mit KPIs und Schnellübersicht |
+| `02_Produits.py` | Verwaltung der Produkte |
+| `03_Categories.py` | Verwaltung der Kategorien |
+| `04_Achats.py` | Verwaltung der Einkäufe |
+| `05_Lignes_Achat.py` | Verwaltung der Einkaufspositionen |
+| `06_Ventes.py` | Verwaltung der Verkäufe |
+| `07_Lignes_Vente.py` | Verwaltung der Verkaufspositionen |
+| `08_Depenses.py` | Verwaltung der Ausgaben |
+| `09_Pertes.py` | Erfassung von Verlusten |
+| `10_Tresorerie.py` | Verwaltung der Kassenbewegungen |
+| `11_Inventaire.py` | Inventur und Lagerkontrolle |
+| `12_Rapports.py` | Berichte und Datenexport |
+| `13_Dashboard.py` | Internes Dashboard |
+| `14_Administration.py` | Administration und Datenimport |
+| `15_A_Propos.py` | Projektinformationen |
 
 ---
 
-# 📚 Weiterführende Dokumentation
+# Screenshots
 
-Weitere Informationen zu den einzelnen Projektbereichen befinden sich in den folgenden Dokumentationen:
+## Startseite
 
-- **README.md** – Projektübersicht
-- **sql/README.md** – PostgreSQL-Datenbank
-- **powerbi/README.md** – Power BI Dashboard
-- **docs/** – Bilder und weitere Projektdokumentation
+![Accueil](../images/streamlit/streamlit_accueil.png)
 
 ---
 
-# 👨‍💻 Autor
+## Produkte
 
-**Girandoux Fandio**
-
-Dipl.-Ing. (FH) Maschinenbau
-
-Weiterbildung:
-
-**Daten- und Prozessanalyse mit Python (Data Science Kompakt)**
-
-GitHub:
-
-https://github.com/Girandoux
+![Produits](../images/streamlit/streamlit_produits.png)
 
 ---
 
-# 📝 Abschluss
+## Kategorien
 
-Dieses Projekt wurde entwickelt, um die Geschäftsprozesse einer kleinen Superette digital abzubilden und gleichzeitig eine zuverlässige Datenbasis für Analysen bereitzustellen.
+![Categories](../images/streamlit/streamlit_categories.png)
 
-Es verbindet PostgreSQL, Python, Streamlit und Power BI zu einer vollständigen Lösung für Datenerfassung, Verwaltung und Auswertung.
+---
 
-Während der Entwicklung standen eine übersichtliche Benutzeroberfläche, eine saubere Datenstruktur und eine einfache Erweiterbarkeit im Mittelpunkt.
+## Einkäufe
 
-Ich wünsche dir viel Freude beim Anschauen des Projekts und freue mich über Feedback oder einen fachlichen Austausch.
+![Achats](../images/streamlit/streamlit_achats.png)
+
+---
+
+## Einkaufspositionen
+
+![Lignes Achat](../images/streamlit/streamlit_ligne_achat.png)
+
+---
+
+## Verkäufe
+
+![Ventes](../images/streamlit/streamlit_ventes.png)
+
+---
+
+## Verkaufspositionen
+
+![Lignes Vente](../images/streamlit/streamlit_lignes_vente.png)
+
+---
+
+## Ausgaben
+
+![Depenses](../images/streamlit/streamlit_depenses.png)
+
+---
+
+## Verluste
+
+![Pertes](../images/streamlit/streamlit_perte.png)
+
+---
+
+## Kassenverwaltung
+
+![Tresorerie](../images/streamlit/streamlit_tresorie.png)
+
+---
+
+## Inventur
+
+![Inventaire](../images/streamlit/streamlit_inventaire.png)
+
+---
+
+## Berichte
+
+![Rapports](../images/streamlit/streamlit_raport.png)
+
+---
+
+## Dashboard
+
+![Dashboard](../images/streamlit/streamlit_dashboard.png)
+
+---
+
+## Administration
+
+![Administration](../images/streamlit/streamlit_administration.png)
+
+---
+
+## Projektinformationen
+
+![A propos](../images/streamlit/streamlit_a_propos.png)
+
+---
+
+# Hauptfunktionen
+
+Die Anwendung bietet unter anderem folgende Funktionen.
+
+## Produktverwaltung
+
+- Produkte anlegen
+- Produkte bearbeiten
+- Produkte deaktivieren
+- Automatische Produktcodes
+- Verwaltung des Mindestbestands
+
+---
+
+## Einkaufsverwaltung
+
+- Einkaufsrechnungen erstellen
+- Automatische Rechnungsnummern
+- Einkaufspositionen verwalten
+- Automatische Preisberechnung
+- Berechnung der Einkaufssumme
+
+---
+
+## Verkaufsverwaltung
+
+- Verkäufe erfassen
+- Verkaufspositionen verwalten
+- Produktsuche
+- Automatische Preisvorschläge
+- Lagerbestandsprüfung
+- Warnung bei negativer Marge
+
+---
+
+## Inventur
+
+- Inventuren durchführen
+- Lagerbestände vergleichen
+- Inventurdifferenzen berechnen
+- Lagerbestand synchronisieren
+
+---
+
+## Berichte
+
+- Excel-Export
+- CSV-Export
+- PDF-Export
+- Individuelle Filter
+- Zusammenfassungen nach Produkt oder Kategorie
+
+---
+
+# Datenvalidierung
+
+Die Anwendung überprüft unter anderem:
+
+- Pflichtfelder
+- Zahlenformate
+- Lagerbestand
+- Negative Margen
+- Doppelte Produkte
+- Fehlende Produktauswahl
+- Inventurdifferenzen
+
+Dadurch wird eine hohe Datenqualität sichergestellt.
+
+---
+
+# Benutzeroberfläche
+
+Das Design wurde für eine einfache und übersichtliche Bedienung entwickelt.
+
+Merkmale:
+
+- moderne KPI-Karten
+- einheitliches Farbschema
+- übersichtliche Formulare
+- responsive Tabellen
+- kompakte Navigation
+- konsistente Informationsboxen
+
+---
+
+# Wichtige Dateien
+
+```text
+app.py
+
+config/
+├── database.py
+├── settings.py
+└── styles.py
+
+database/
+utils/
+streamlit/pages/
+```
+
+Diese Dateien enthalten die Konfiguration, Datenbankanbindung, Geschäftslogik und Benutzeroberfläche der Anwendung.
+
+---
+# Datenfluss
+
+Die Streamlit-Anwendung ist Bestandteil des gesamten ERP-Superette-Systems und arbeitet direkt mit der zentralen PostgreSQL-Datenbank.
+
+Die Daten werden im Projekt nach folgendem Prozess verarbeitet:
+
+```text
+CSV-/Excel-Dateien
+(Einmalige Datenmigration)
+          │
+          ▼
+Python ETL-Prozess
+          │
+          ▼
+PostgreSQL-Datenbank
+(Zentrale Datenbasis)
+      ▲             │
+      │             │
+Lesen & Schreiben   │ Lesen
+      │             ▼
+ Streamlit ERP   Power BI
+      ▲
+      │
+Benutzer / Superette
+```
+
+## Prozessbeschreibung
+
+1. Die Stammdaten und Geschäftsdaten werden einmalig aus **Excel- und CSV-Dateien** übernommen.
+2. Der **Python-ETL-Prozess** importiert, bereinigt und validiert die Daten.
+3. Alle Daten werden zentral in der **PostgreSQL-Datenbank** gespeichert.
+4. Die **Streamlit-ERP-Anwendung** liest Daten aus der Datenbank und speichert neue oder geänderte Informationen direkt zurück.
+5. **Power BI** greift ausschließlich lesend auf dieselbe Datenbank zu und erstellt Dashboards sowie Berichte.
+6. Die Benutzer arbeiten ausschließlich über die Streamlit-ERP-Anwendung.
+---
+
+# Verwandte Ordner
+
+```text
+database/
+sql/
+data/
+powerbi/
+images/
+docs/
+config/
+utils/
+```
+
+Diese Ordner bilden gemeinsam die technische Grundlage des ERP-Systems.
+
+---
+
+# Hinweise
+
+Die Datei **`ui_state.json`** dient ausschließlich zur lokalen Speicherung von Benutzereinstellungen und zuletzt verwendeten Eingaben.
+
+Sie wird nicht in das öffentliche GitHub-Repository aufgenommen.
+
+---
+
+# Lizenz
+
+Dieser Ordner ist Bestandteil des Projekts **ERP Superette**.
+
+© 2026 Girandoux Fandio Nganwajop
